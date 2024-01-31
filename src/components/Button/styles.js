@@ -1,0 +1,16 @@
+import styled from "styled-components";
+
+export const Container = styled.button`
+  background-color: ${({ theme }) => theme.COLORS.RED_100};
+  color: ${({ theme }) => theme.COLORS.LIGHT_100};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  border: none;
+  width: 316px;
+  height: 48px;
+  font-size: 14px;
+  font-family: "Poppins";
+  font-weight: 400;
+`
