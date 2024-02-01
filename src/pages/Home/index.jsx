@@ -9,9 +9,9 @@ export function Home() {
       <Navbar />
       <main>
         <div>
-          <header className="outdoor">
+          <header className="banner">
             <img src={homeImg} alt="" />
-            <div>
+            <div className="banner-text">
               <h2>Sabores inigualáveis</h2>
               <p>Sinta o cuidado do preparo com ingredientes selecionados.</p>
             </div>
