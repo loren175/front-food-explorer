@@ -2,11 +2,13 @@ import { Container } from "./styles"
 import { Navbar } from "../../components/Navbar"
 import homeImg from "../../assets/home-img.png"
 import { Footer } from "../../components/Footer"
+import { SideMenu } from "../../components/SideMenu"
 
 export function Home() {
   return (
     <Container>
       <Navbar />
+      <SideMenu/>
       <main>
         <div>
           <header className="banner">
