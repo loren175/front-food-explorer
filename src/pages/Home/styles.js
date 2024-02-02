@@ -14,7 +14,7 @@ export const Container = styled.div`
     color: ${({ theme }) => theme.COLORS.LIGHT_300};
     width: 284px;
     height: 106px;
-    margin: 43px;
+    margin-top: 43px;
     border-radius: 4px;
   }
 
