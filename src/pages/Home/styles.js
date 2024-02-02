@@ -2,10 +2,10 @@ import styled from "styled-components"
 
 export const Container = styled.div`
   main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 31px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 200px;
+    justify-items: center;
   }
 
   .banner {
@@ -49,5 +49,4 @@ export const Container = styled.div`
     font-size: 9.6px;
     font-weight: 200;
   }
-
 `

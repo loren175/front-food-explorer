@@ -26,4 +26,8 @@ export const Brand = styled.div`
     font-size: 15px;
     //@media 320px = 14px
   }
+
+  svg:hover {
+    cursor: default;
+  }
 `
