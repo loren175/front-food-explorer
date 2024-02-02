@@ -18,7 +18,7 @@ export const Container = styled.div`
     border-radius: 4px;
   }
 
-  img {
+  .banner-img {
     position: absolute;
     top: -22px;
     left: -22px;
@@ -49,4 +49,5 @@ export const Container = styled.div`
     font-size: 9.6px;
     font-weight: 200;
   }
+
 `

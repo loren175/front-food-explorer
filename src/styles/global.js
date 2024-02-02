@@ -30,12 +30,12 @@ export default createGlobalStyle`
     text-decoration: none;
   }
   
-  button, a {
+  button, a, svg {
     cursor: pointer;
     transition: filter 0.2s;
   }
   
-  button:hover, a:hover {
+  button:hover, a:hover, svg:hover {
     filter: brightness(0.9);
   }
 `
