@@ -39,3 +39,12 @@ export const Container = styled.div`
     font-weight: 300;
   }
 `
+
+export const Order = styled.div`
+  width: 70%;
+  display: flex;
+  margin-top: 10px;
+   button {
+    height: 32px;
+  }
+`
