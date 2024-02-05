@@ -1,10 +1,10 @@
 import { Container } from "./styles"
 import { Navbar } from "../../components/Navbar"
-import homeImg from "../../assets/home-img.png"
 import { Footer } from "../../components/Footer"
 import { SideMenu } from "../../components/SideMenu"
 import { Section } from "../../components/Section"
 import { Card } from "../../components/Card"
+import homeImg from "../../assets/home-img.png"
 
 import { register } from "swiper/element/bundle"
 

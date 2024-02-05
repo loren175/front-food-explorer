@@ -13,4 +13,10 @@ export const Container = styled.button`
   font-size: 14px;
   font-family: "Poppins";
   font-weight: 400;
+
+  .paper-icon {
+    width: 19px;
+    height: 16px;
+    margin-right: 4px;
+  }
 `
