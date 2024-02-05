@@ -13,7 +13,7 @@ export const Container = styled.div`
   border-radius: 4px;
   border: 2px solid ${({ theme }) => theme.COLORS.DARK_300};
 
-  svg {
+  .pencil {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -41,10 +41,12 @@ export const Container = styled.div`
 `
 
 export const Order = styled.div`
-  width: 70%;
   display: flex;
+  align-items: center;
+  flex-direction: column;
   margin-top: 10px;
    button {
     height: 32px;
+    width: 162px;
   }
 `
