@@ -1,11 +1,10 @@
-import { Card } from "../Card";
-import { Container } from "./styles";
+import { Container } from "./styles"
 
-export function Section({text}) {
+export function Section({ text, children }) {
   return (
     <Container>
       <h3>{text}</h3>
-      <Card/>
+      {children}
     </Container>
   )
 }

@@ -49,4 +49,13 @@ export const Container = styled.div`
     font-size: 9.6px;
     font-weight: 200;
   }
+
+  swiper-container {
+    height: 292px;
+    width: 380px;
+  }
+
+  swiper-slide {
+    max-width: 200px;
+  }
 `
