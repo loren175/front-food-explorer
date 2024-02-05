@@ -17,7 +17,7 @@ export function NewDish() {
         <p>Imagem do prato</p>
         input img
         <p>Nome</p>
-        <Input placeholder="Salada Ceasar" />
+        <Input placeholder="Salada Ceasar"/>
         <p>Categoria</p>
         select bar
         <p>Ingredientes</p>
