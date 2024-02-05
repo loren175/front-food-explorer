@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const Container = styled.div`
   display: flex;
@@ -7,13 +7,13 @@ export const Container = styled.div`
   align-items: center;
   background-color: ${({ theme }) => theme.COLORS.DARK_200};
   width: 200px;
-  height: 266px;
+  height: 276px;
   gap: 10px;
   position: relative;
   border-radius: 4px;
   border: 2px solid ${({ theme }) => theme.COLORS.DARK_300};
 
-  .pencil {
+  .heart {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -22,8 +22,8 @@ export const Container = styled.div`
   }
 
   img {
-    width: 100px;
-    height: 100px;
+    width: 95px;
+    height: 95px;
   }
 
   h4 {
@@ -44,8 +44,8 @@ export const Order = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-top: 10px;
-   button {
+  margin-top: 5px;
+  button {
     height: 32px;
     width: 162px;
   }
