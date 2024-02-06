@@ -21,14 +21,14 @@ export function NewDish() {
           <Section text="Imagem do prato">
             <ImgUpload className="image">
               <label htmlFor="image">
-                <PiUploadSimpleLight />
+                <PiUploadSimpleLight size={24} />
                 <span>Selecione uma imagem</span>
-                <input type="file" id="image" />
               </label>
+              <input className="upload" type="file" id="image" />
             </ImgUpload>
           </Section>
           <Section text="Nome">
-            <Input placeholder="Ex.: Salada Ceasar" />
+            <Input placeholder="Ex.: Salada Ceasar" background="dark_800" />
           </Section>
           <Section text="Categoria">
             <label htmlFor="category">
@@ -38,12 +38,12 @@ export function NewDish() {
                 <option value=""></option>
                 <option value=""></option>
               </select>
-              <RiArrowDownSLine/>
+              <RiArrowDownSLine />
             </label>
           </Section>
           <Section text="Ingredientes">add tags bar</Section>
           <Section text="Preço">
-            <Input placeholder="R$ 00,00" />
+            <Input background="dark_800" placeholder="R$ 00,00" />
           </Section>
           <Section text="Descrição">
             <textarea name="" id="" cols="30" rows="10"></textarea>
