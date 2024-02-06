@@ -46,7 +46,13 @@ export function NewDish() {
             <Input background="dark_800" placeholder="R$ 00,00" />
           </Section>
           <Section text="Descrição">
-            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <textarea
+              placeholder="Fale brevemente sobre o prato, seus ingredientes e composição"
+              name=""
+              id=""
+              cols="30"
+              rows="10"
+            ></textarea>
           </Section>
 
           <Button text="Salvar alterações" />
