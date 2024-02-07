@@ -17,6 +17,7 @@ export const Container = styled.div`
     font-weight: 300;
     border: none;
     color: ${({ theme }) => theme.COLORS.LIGHT_500};
+    padding: 6px;
   }
 
   .search-icon {
