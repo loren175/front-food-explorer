@@ -16,8 +16,8 @@ export function NewDish() {
       <Navbar />
       <SideMenu />
       <main>
-        <ButtonText text="< voltar" />
         <Form>
+        <ButtonText className="back-" text="< voltar" />
           <h2>Novo Prato</h2>
           <Section text="Imagem do prato">
             <ImgUpload className="image">
@@ -44,7 +44,7 @@ export function NewDish() {
           <Section text="Ingredientes">
             <div className="tags">
               <IngredientItem isNew placeholder="Adicionar" />
-              <IngredientItem isNew placeholder="Adicionar" />
+   
             </div>
           </Section>
           <Section text="Preço">

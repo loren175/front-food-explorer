@@ -10,14 +10,13 @@ export const Container = styled.div`
   width: 100%;
   > input {
     background: transparent;
-    padding: 3px;
     width: 100%;
     height: 48px;
     font-size: 14px;
     font-weight: 300;
     border: none;
     color: ${({ theme }) => theme.COLORS.LIGHT_500};
-    padding: 6px;
+    padding: 16px;
   }
 
   .search-icon {

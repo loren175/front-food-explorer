@@ -3,9 +3,23 @@ import styled from "styled-components"
 export const Container = styled.div`
   width: 100%;
   min-height: 100vh;
+
+  main {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+  }
 `
 
 export const Form = styled.form`
+  h2 {
+    margin: 10px 0px;
+    font-family: "Poppins";
+    font-weight: 300;
+    color: ${({ theme }) => theme.COLORS.LIGHT_300};
+    font-size: 32px;
+  }
+
   textarea {
     background-color: ${({ theme }) => theme.COLORS.DARK_800};
     color: ${({ theme }) => theme.COLORS.LIGHT_500};
@@ -13,7 +27,7 @@ export const Form = styled.form`
     border-radius: 4px;
     font-family: "Roboto";
     font-size: 14px;
-    width: 364px;
+    width: 100%;
     height: 172px;
     outline: none;
     padding: 10px 50px 10px 10px;
@@ -23,20 +37,23 @@ export const Form = styled.form`
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    gap: 6px;
     padding: 6px;
     align-items: center;
     background-color: ${({ theme }) => theme.COLORS.DARK_800};
     border-radius: 4px;
-    height: 48px;
+    height: 100%;
   }
 
   .category-label {
-    background-color: ${({ theme }) => theme.COLORS.DARK_800};
+    background-color: ${({ theme }) => theme.COLORS.DARK_900};
     width: 100%;
     height: 48px;
     border-radius: 4px;
     display: flex;
     align-items: center;
+
+    position: relative;
   }
 
   select {
@@ -46,7 +63,10 @@ export const Form = styled.form`
     color: ${({ theme }) => theme.COLORS.LIGHT_400};
     appearance: none;
     width: 100%;
-    padding: 6px;
+    padding: 16px;
+    font-family: "Roboto";
+    font-size: 14px;
+    font-weight: 400;
   }
 
   option {
@@ -73,7 +93,7 @@ export const ImgUpload = styled.div`
     cursor: pointer;
     background-color: ${({ theme }) => theme.COLORS.DARK_800};
     border-radius: 4px;
-    width: 364px;
+    width: 100%;
   }
 
   .upload {
