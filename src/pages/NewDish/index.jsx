@@ -8,6 +8,7 @@ import { Button } from "../../components/Button"
 import { Section } from "../../components/Section"
 import { PiUploadSimpleLight } from "react-icons/pi"
 import { RiArrowDownSLine } from "react-icons/ri"
+import { IngredientItem } from "../../components/IngredientItem"
 
 export function NewDish() {
   return (
@@ -41,7 +42,12 @@ export function NewDish() {
               <RiArrowDownSLine />
             </label>
           </Section>
-          <Section text="Ingredientes">add tags bar</Section>
+          <Section text="Ingredientes">
+            <div className="tags">
+              <IngredientItem isNew placeholder="Adicionar" />
+              <IngredientItem isNew placeholder="Adicionar" />
+            </div>
+          </Section>
           <Section text="Preço">
             <Input background="dark_800" placeholder="R$ 00,00" />
           </Section>

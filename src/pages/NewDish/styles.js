@@ -18,6 +18,17 @@ export const Form = styled.form`
     outline: none;
     padding: 10px 50px 10px 10px;
   }
+
+  .tags {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 6px;
+    align-items: center;
+    background-color: ${({ theme }) => theme.COLORS.DARK_800};
+    border-radius: 4px;
+    height: 48px;
+  }
 `
 
 export const ImgUpload = styled.div`
@@ -39,4 +50,5 @@ export const ImgUpload = styled.div`
   .upload {
     display: none;
   }
+
 `
