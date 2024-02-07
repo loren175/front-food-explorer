@@ -9,6 +9,8 @@ import { Button } from "../../components/Button"
 import { Tag } from "../../components/Tag"
 import { Section } from "../../components/Section"
 
+import theme from "../../styles/theme"
+
 export function Dish() {
   return (
     <Container>
@@ -34,7 +36,11 @@ export function Dish() {
 
         <div className="order">
           <Amount text="01" />
-          <Button hasIcon={true} text="pedir ∙ R$ 25,00" />
+          <Button
+            bgColor={theme.COLORS.RED_100}
+            hasIcon={true}
+            text="pedir ∙ R$ 25,00"
+          />
         </div>
       </main>
       <Footer />

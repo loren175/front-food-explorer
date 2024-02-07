@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.button`
-  background-color: ${({ theme }) => theme.COLORS.RED_100};
+  background-color: ${({ bgColor }) => bgColor};
   color: ${({ theme }) => theme.COLORS.LIGHT_100};
   display: flex;
   justify-content: center;

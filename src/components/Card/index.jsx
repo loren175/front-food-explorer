@@ -4,6 +4,8 @@ import food1 from "../../assets/food1.png"
 import { Button } from "../Button"
 import { Amount } from "../Amount"
 
+import theme from "../../styles/theme"
+
 // PiPencilSimple add to admn
 
 export function Card() {
@@ -15,7 +17,7 @@ export function Card() {
       <h5>R$ 00,00</h5>
       <Order>
         <Amount text="01" />
-        <Button text="Incluir" />
+        <Button bgColor={theme.COLORS.RED_100} text="Incluir" />
       </Order>
     </Container>
   )

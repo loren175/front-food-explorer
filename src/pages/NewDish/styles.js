@@ -79,6 +79,13 @@ export const Form = styled.form`
     right: 0;
     margin-right: 10px;
   }
+
+  .btn {
+    width: 100%;
+    button {
+      width: 290px;
+    }
+  }
 `
 
 export const ImgUpload = styled.div`

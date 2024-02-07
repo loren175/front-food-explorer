@@ -10,6 +10,8 @@ import { PiUploadSimpleLight } from "react-icons/pi"
 import { RiArrowDownSLine } from "react-icons/ri"
 import { IngredientItem } from "../../components/IngredientItem"
 
+import theme from "../../styles/theme"
+
 export function NewDish() {
   return (
     <Container>
@@ -17,7 +19,7 @@ export function NewDish() {
       <SideMenu />
       <main>
         <Form>
-        <ButtonText className="back-" text="< voltar" />
+          <ButtonText className="back-" text="< voltar" />
           <h2>Novo Prato</h2>
           <Section text="Imagem do prato">
             <ImgUpload className="image">
@@ -38,13 +40,12 @@ export function NewDish() {
                 <option value="">Refeição2</option>
                 <option value="">Refeição3</option>
               </select>
-              <RiArrowDownSLine className="svgCategory" size={22}/>
+              <RiArrowDownSLine className="svgCategory" size={22} />
             </label>
           </Section>
           <Section text="Ingredientes">
             <div className="tags">
               <IngredientItem isNew placeholder="Adicionar" />
-   
             </div>
           </Section>
           <Section text="Preço">
@@ -60,7 +61,9 @@ export function NewDish() {
             ></textarea>
           </Section>
 
-          <Button background="red_400" text="Salvar alterações" />
+          <div className="btn">
+            <Button bgColor={theme.COLORS.RED_400} text="Salvar alterações" />
+          </div>
         </Form>
       </main>
       <Footer />

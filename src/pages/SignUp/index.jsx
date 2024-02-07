@@ -3,6 +3,8 @@ import { Input } from "../../components/Input"
 import { Button } from "../../components/Button"
 import { ButtonText } from "../../components/ButtonText"
 
+import theme from "../../styles/theme"
+
 export function SignUp() {
   return (
     <Container>
@@ -43,7 +45,7 @@ export function SignUp() {
         />
       </div>
 
-      <Button text="Criar conta" />
+      <Button bgColor={theme.COLORS.RED_100} text="Criar conta" />
       <ButtonText text="Já tenho uma conta" />
     </Container>
   )
