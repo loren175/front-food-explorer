@@ -29,6 +29,35 @@ export const Form = styled.form`
     border-radius: 4px;
     height: 48px;
   }
+
+  .category-label {
+    background-color: ${({ theme }) => theme.COLORS.DARK_800};
+    width: 100%;
+    height: 48px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+  }
+
+  select {
+    border: none;
+    background: none;
+    outline: none;
+    color: ${({ theme }) => theme.COLORS.LIGHT_400};
+    appearance: none;
+    width: 100%;
+    padding: 6px;
+  }
+
+  option {
+    background-color: ${({ theme }) => theme.COLORS.DARK_800};
+  }
+
+  .svgCategory {
+    position: absolute;
+    cursor: default;
+    right: 0;
+  }
 `
 
 export const ImgUpload = styled.div`
@@ -50,5 +79,4 @@ export const ImgUpload = styled.div`
   .upload {
     display: none;
   }
-
 `

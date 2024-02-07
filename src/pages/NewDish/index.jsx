@@ -32,14 +32,13 @@ export function NewDish() {
             <Input placeholder="Ex.: Salada Ceasar" background="dark_800" />
           </Section>
           <Section text="Categoria">
-            <label htmlFor="category">
+            <label className="category-label" htmlFor="category">
               <select id="category">
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
+                <option value="">Refeição</option>
+                <option value="">Refeição2</option>
+                <option value="">Refeição3</option>
               </select>
-              <RiArrowDownSLine />
+              <RiArrowDownSLine className="svgCategory" />
             </label>
           </Section>
           <Section text="Ingredientes">
