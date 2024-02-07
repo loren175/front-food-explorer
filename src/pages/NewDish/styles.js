@@ -77,6 +77,7 @@ export const Form = styled.form`
     position: absolute;
     cursor: default;
     right: 0;
+    margin-right: 10px;
   }
 `
 

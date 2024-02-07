@@ -38,7 +38,7 @@ export function NewDish() {
                 <option value="">Refeição2</option>
                 <option value="">Refeição3</option>
               </select>
-              <RiArrowDownSLine className="svgCategory" />
+              <RiArrowDownSLine className="svgCategory" size={22}/>
             </label>
           </Section>
           <Section text="Ingredientes">
@@ -60,7 +60,7 @@ export function NewDish() {
             ></textarea>
           </Section>
 
-          <Button text="Salvar alterações" />
+          <Button background="red_400" text="Salvar alterações" />
         </Form>
       </main>
       <Footer />
