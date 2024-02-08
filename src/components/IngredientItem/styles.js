@@ -10,7 +10,6 @@ export const Container = styled.div`
   color: ${({ theme }) => theme.COLORS.LIGHT_100};
   border-radius: 10px;
   padding-right: 16px;
-  font-size: 16px;
 
   button {
     border: none;
@@ -31,8 +30,9 @@ export const Container = styled.div`
 
   input {
     height: 32px;
-    width: 116px;
+    width: 96px;
     padding: 12px;
+    font-size: 14px;
 
     color: ${({ theme, isNew }) =>
       isNew
