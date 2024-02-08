@@ -9,9 +9,8 @@ export const Container = styled.div`
   width: 100%;
   gap: 31px;
 
-  p {
+  h3 {
     color: ${({ theme }) => theme.COLORS.LIGHT_400};
-    margin: 31px 0px 10px 0px;
   }
 `
 
@@ -19,4 +18,15 @@ export const Brand = styled.div`
   display: flex;
   align-items: center;
   gap: 11px;
+`
+
+export const Form = styled.form`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  button {
+    margin-bottom: 20px;
+  }
 `

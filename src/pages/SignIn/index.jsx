@@ -1,7 +1,8 @@
-import { Container, Brand } from "./styles"
+import { Container, Brand, Form } from "./styles"
 import { Input } from "../../components/Input"
 import { Button } from "../../components/Button"
 import { ButtonText } from "../../components/ButtonText"
+import { Section } from "../../components/Section"
 
 import theme from "../../styles/theme"
 
@@ -23,24 +24,25 @@ export function SignIn() {
         </svg>
         <h1>food explorer</h1>
       </Brand>
+      <Form>
+        <Section text="Email">
+          <Input
+            width="medium"
+            placeholder="Exemplo: exemplo@exemplo.com.br"
+            type="email"
+          />
+        </Section>
+        <Section text="Senha">
+          <Input
+            width="medium"
+            placeholder="No mínimo 6 caracteres"
+            type="password"
+          />
+        </Section>
 
-      <div>
-        <p>Email</p>
-        <Input
-          width="medium"
-          placeholder="Exemplo: exemplo@exemplo.com.br"
-          type="email"
-        />
-        <p>Senha</p>
-        <Input
-          width="medium"
-          placeholder="No mínimo 6 caracteres"
-          type="password"
-        />
-      </div>
-
-      <Button bgColor={theme.COLORS.RED_100} text="Entrar" />
-      <ButtonText text="Criar uma conta" />
+        <Button bgColor={theme.COLORS.RED_100} text="Entrar" />
+        <ButtonText text="Criar uma conta" />
+      </Form>
     </Container>
   )
 }

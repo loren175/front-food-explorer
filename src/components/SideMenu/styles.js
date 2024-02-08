@@ -3,6 +3,8 @@ import styled from "styled-components"
 export const Container = styled.aside`
   height: 100vh;
   width: 100%;
+  display: none;
+  opacity: 0;
 
   .menu-header {
     display: flex;
