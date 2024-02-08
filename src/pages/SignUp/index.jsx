@@ -25,30 +25,31 @@ export function SignUp() {
         <h1>food explorer</h1>
       </Brand>
       <Form>
-      <Section text="Seu nome">
-        <Input
-          width="medium"
-          placeholder="Exemplo: Maria da Silva"
-          type="text"
-        />
-      </Section>
-      <Section text="Email">
-        <Input
-          width="medium"
-          placeholder="Exemplo: exemplo@exemplo.com.br"
-          type="email"
-        />
-      </Section>
-      <Section text="Senha">
-        <Input
-          width="medium"
-          placeholder="No mínimo 6 caracteres"
-          type="password"
-        />
-      </Section>
+        <h2>Crie sua Conta</h2>
+        <Section text="Seu nome">
+          <Input
+            width="medium"
+            placeholder="Exemplo: Maria da Silva"
+            type="text"
+          />
+        </Section>
+        <Section text="Email">
+          <Input
+            width="medium"
+            placeholder="Exemplo: exemplo@exemplo.com.br"
+            type="email"
+          />
+        </Section>
+        <Section text="Senha">
+          <Input
+            width="medium"
+            placeholder="No mínimo 6 caracteres"
+            type="password"
+          />
+        </Section>
 
-      <Button bgColor={theme.COLORS.RED_100} text="Criar conta" />
-      <ButtonText text="Já tenho uma conta" />
+        <Button bgColor={theme.COLORS.RED_100} text="Criar conta" />
+        <ButtonText text="Já tenho uma conta" />
       </Form>
     </Container>
   )
