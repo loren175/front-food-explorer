@@ -27,7 +27,6 @@ export const Brand = styled.div`
   gap: 11px;
 
   @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
-    padding-bottom: 100px;
     width: 100%;
   }
 `

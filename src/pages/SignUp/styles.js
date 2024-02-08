@@ -36,7 +36,6 @@ export const Form = styled.form`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 100%;
 
   h2 {
     display: none;
@@ -49,7 +48,7 @@ export const Form = styled.form`
   @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
     background-color: ${({ theme }) => theme.COLORS.DARK_700};
     border-radius: 16px;
-    padding: 20px 0 20px 0;
+    padding: 50px;
 
     h2 {
       display: initial;
