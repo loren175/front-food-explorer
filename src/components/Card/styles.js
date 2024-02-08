@@ -13,7 +13,7 @@ export const Container = styled.div`
   border-radius: 4px;
   border: 2px solid ${({ theme }) => theme.COLORS.DARK_300};
 
-  .heart {
+  .card-icons {
     position: absolute;
     top: 10px;
     right: 10px;
