@@ -16,7 +16,7 @@ export const Container = styled.div`
     color: ${({ theme }) => theme.COLORS.LIGHT_300};
     width: 284px;
     height: 106px;
-    margin: 43px 55px 0 0;
+    margin-top: 43px;
     border-radius: 4px;
   }
 
@@ -54,7 +54,7 @@ export const Container = styled.div`
 
   swiper-container {
     height: 292px;
-    width: 380px;
+    width: 290px;
   }
 
   swiper-slide {

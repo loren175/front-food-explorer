@@ -1,6 +1,19 @@
-import { Container, Brand } from "./styles";
+import { Container, Brand } from "./styles"
 import { PiList, PiNewspaperClipping } from "react-icons/pi"
-export function Navbar() {
+import { useState, useEffect } from "react"
+
+export function Navbar({ isAdmin }) {
+  const [itemCount, setItemCount] = useState(0)
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      // Atualiza o número de itens no carrinho com um valor aleatório (apenas para fins de demonstração)
+      const randomCount = Math.floor(Math.random() * 10)
+      setItemCount(randomCount)
+    }, 2000)
+    return () => clearInterval(intervalId)
+  }, [])
+
   return (
     <Container>
       <PiList size={24} />
@@ -18,8 +31,12 @@ export function Navbar() {
           />
         </svg>
         <h1>food explorer</h1>
+        {isAdmin && <p>admin</p>}
       </Brand>
-      <PiNewspaperClipping size={26} />
+      <div className="order-svg">
+        {!isAdmin && <PiNewspaperClipping size={24} />}
+        <div className="counter">{itemCount}</div>
+      </div>
     </Container>
   )
 }
