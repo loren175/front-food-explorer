@@ -13,8 +13,8 @@ register()
 export function Home() {
   return (
     <Container>
-      <Navbar />
       <SideMenu />
+      <Navbar />
       <main>
         <div>
           <header className="banner">

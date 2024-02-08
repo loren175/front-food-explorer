@@ -15,8 +15,8 @@ import theme from "../../styles/theme"
 export function NewDish() {
   return (
     <Container>
-      <Navbar />
       <SideMenu />
+      <Navbar />
       <main>
         <Form>
           <ButtonText className="back-" text="< voltar" />

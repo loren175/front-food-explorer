@@ -1,9 +1,10 @@
 import styled from "styled-components"
 import { Link } from "react-router-dom"
 
-export const Container = styled.nav`
-  display: none;
-  opacity: 0;
+export const Container = styled.aside`
+  height: 100vh;
+  width: 100%;
+
   
   .menu-header {
     display: flex;

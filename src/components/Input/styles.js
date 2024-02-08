@@ -16,13 +16,12 @@ export const Container = styled.div`
     font-weight: 300;
     border: none;
     color: ${({ theme }) => theme.COLORS.LIGHT_500};
-    padding: 16px;
+    padding: 5px;
   }
 
   .search-icon {
     margin: 8px;
-    width: 25px;
-    height: 25px;
+    font-size: 25px;
     color: ${({ theme }) => theme.COLORS.LIGHT_400};
   }
 `
