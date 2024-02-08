@@ -1,11 +1,8 @@
 import styled from "styled-components"
-import { Link } from "react-router-dom"
 
 export const Container = styled.aside`
   height: 100vh;
   width: 100%;
-  display: none;
-  opacity: 0;
 
   .menu-header {
     display: flex;
@@ -25,7 +22,6 @@ export const Container = styled.aside`
 
   .menu-content {
     margin: 25px;
-    border-bottom: 1px solid ${({ theme }) => theme.COLORS.DARK_1000};
   }
 
   .menu-search {
@@ -38,13 +34,17 @@ export const Container = styled.aside`
     font-weight: 500;
     color: ${({ theme }) => theme.COLORS.LIGHT_100};
   }
-`
 
-export const Exit = styled(Link)`
-  font-weight: 300;
-  font-size: 16px;
-  font-family: "Poppins";
-  color: ${({ theme }) => theme.COLORS.LIGHT_300};
-  display: block;
-  margin: 30px 0 10px 0;
+  .btn-border {
+    border-bottom: 1px solid ${({ theme }) => theme.COLORS.DARK_1000};
+  }
+
+  button {
+    font-weight: 300;
+    font-size: 18px;
+    font-family: "Poppins";
+    color: ${({ theme }) => theme.COLORS.LIGHT_300};
+    display: block;
+    margin: 10px 0 10px 0;
+  }
 `

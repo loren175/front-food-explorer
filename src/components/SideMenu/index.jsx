@@ -1,9 +1,9 @@
-import { Container, Exit } from "./styles"
+import { Container } from "./styles"
 import { Input } from "../Input"
 import { PiX } from "react-icons/pi"
+import { ButtonText } from "../ButtonText"
 
-
-export function SideMenu() {
+export function SideMenu({ isAdmin }) {
   return (
     <Container>
       <div className="menu-header">
@@ -16,7 +16,14 @@ export function SideMenu() {
           hasIcon={true}
           placeholder="Busque por pratos ou ingredientes"
         />
-        <Exit to='/'>Sair</Exit>
+        {isAdmin && (
+          <div className="btn-border">
+            <ButtonText text="Novo Prato"/>
+          </div>
+        )}
+        <div className="btn-border">
+          <ButtonText text="Sair"/>
+        </div>
       </div>
     </Container>
   )
