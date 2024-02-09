@@ -6,11 +6,16 @@ import { Section } from "../../components/Section"
 import { Card } from "../../components/Card"
 import homeImg from "../../assets/home-img.png"
 
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints"
+
+import { useMediaQuery } from "react-responsive"
 import { register } from "swiper/element/bundle"
 
 register()
 
 export function Home() {
+  const isDesktop = useMediaQuery({ minWidth: DEVICE_BREAKPOINTS.LG })
+
   return (
     <Container>
       <SideMenu />
@@ -28,9 +33,9 @@ export function Home() {
 
         <Section text="Refeições">
           <swiper-container
-            space-between="27"
+            space-between={isDesktop ? "27" : "16"}
             slides-per-view="auto"
-            navigation="true"
+            navigation={isDesktop ? "true" : "false"}
             loop="true"
             grab-cursor="true"
           >
@@ -44,9 +49,9 @@ export function Home() {
         </Section>
         <Section text="Sobremesas">
           <swiper-container
-            space-between="27"
+            space-between={isDesktop ? "27" : "16"}
             slides-per-view="auto"
-            navigation="true"
+            navigation={isDesktop ? "true" : "false"}
             loop="true"
             grab-cursor="true"
           >
@@ -66,9 +71,9 @@ export function Home() {
         </Section>
         <Section text="Bebidas">
           <swiper-container
-            space-between="27"
+            space-between={isDesktop ? "27" : "16"}
             slides-per-view="auto"
-            navigation="true"
+            navigation={isDesktop ? "true" : "false"}
             loop="true"
             grab-cursor="true"
           >
@@ -80,8 +85,6 @@ export function Home() {
             </swiper-slide>
           </swiper-container>
         </Section>
-
-     
       </main>
       <Footer />
     </Container>
