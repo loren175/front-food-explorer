@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints"
 
 export const Container = styled.div`
   width: 100%;
@@ -12,7 +13,11 @@ export const Container = styled.div`
 
   .banner {
     position: relative;
-    background-color: ${({ theme }) => theme.COLORS.GRADIENT_200};
+    background: linear-gradient(
+      340deg,
+      ${({ theme }) => theme.COLORS.GRADIENT_100} 0%,
+      ${({ theme }) => theme.COLORS.GRADIENT_200} 100%
+    );
     color: ${({ theme }) => theme.COLORS.LIGHT_300};
     width: 284px;
     height: 106px;
@@ -59,5 +64,48 @@ export const Container = styled.div`
 
   swiper-slide {
     max-width: 200px;
+  }
+
+  @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
+    main {
+      margin: 20px;
+      grid-template-rows: 420px;
+    }
+
+    .banner {
+      margin-top: 130px;
+      width: 970px;
+      height: 230px;
+    }
+
+    .banner-img {
+      width: 602px;
+      height: 376px;
+      top: -146px;
+      left: -50px;
+    }
+
+    .banner-text {
+      grid-template-columns: 300px 1fr;
+      margin-left: 220px;
+    }
+
+    h2 {
+      font-size: 41px;
+      padding-top: 50px;
+    }
+
+    p {
+      font-size: 14.7px;
+    }
+
+    h3 {
+      font-size: 28px;
+    }
+
+    swiper-container {
+      height: 292px;
+      width: 970px;
+    }
   }
 `

@@ -5,6 +5,7 @@ import { SideMenu } from "../../components/SideMenu"
 import { Section } from "../../components/Section"
 import { Card } from "../../components/Card"
 import homeImg from "../../assets/home-img.png"
+import homeImgDesk from "../../assets/home-img-desk.png"
 
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints"
 
@@ -23,7 +24,7 @@ export function Home() {
       <main>
         <div>
           <header className="banner">
-            <img className="banner-img" src={homeImg} alt="" />
+            <img className="banner-img" src={isDesktop ? homeImgDesk : homeImg} alt="" />
             <div className="banner-text">
               <h2>Sabores inigualáveis</h2>
               <p>Sinta o cuidado do preparo com ingredientes selecionados.</p>
