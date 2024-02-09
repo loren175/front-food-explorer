@@ -28,14 +28,14 @@ export function SignIn() {
         <h2>Faça login</h2>
         <Section text="Email">
           <Input
-            width="medium"
+            widthStyle="316px"
             placeholder="Exemplo: exemplo@exemplo.com.br"
             type="email"
           />
         </Section>
         <Section text="Senha">
           <Input
-            width="medium"
+            widthStyle="316px"
             placeholder="No mínimo 6 caracteres"
             type="password"
           />

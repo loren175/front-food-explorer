@@ -16,7 +16,7 @@ export const Container = styled.button`
 
   .paper-icon {
     width: 19px;
-    height: 16px;
+    height: 19px;
     margin-right: 4px;
   }
 `

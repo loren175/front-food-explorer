@@ -28,21 +28,21 @@ export function SignUp() {
         <h2>Crie sua Conta</h2>
         <Section text="Seu nome">
           <Input
-            width="medium"
+            widthStyle="316px"
             placeholder="Exemplo: Maria da Silva"
             type="text"
           />
         </Section>
         <Section text="Email">
           <Input
-            width="medium"
+            widthStyle="316px"
             placeholder="Exemplo: exemplo@exemplo.com.br"
             type="email"
           />
         </Section>
         <Section text="Senha">
           <Input
-            width="medium"
+            widthStyle="316px"
             placeholder="No mínimo 6 caracteres"
             type="password"
           />

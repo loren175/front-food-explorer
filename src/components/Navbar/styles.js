@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints"
 
 export const Container = styled.header`
   width: 100%;
@@ -22,8 +23,8 @@ export const Container = styled.header`
 
   .counter {
     position: absolute;
-    top: -6px;
-    right: -8px;
+    top: 50px;
+    right: 10px;
     background-color: ${({ theme }) => theme.COLORS.RED_200};
     color: ${({ theme }) => theme.COLORS.LIGHT_100};
     font-size: 12px;
@@ -34,6 +35,16 @@ export const Container = styled.header`
     justify-content: center;
     align-items: center;
     font-family: "Poppins";
+  }
+
+  @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
+    justify-content: space-evenly;
+    div {
+      margin-bottom: 0;
+    }
+    button {
+      width: 216px;
+    }
   }
 `
 
@@ -54,5 +65,15 @@ export const Brand = styled.div`
 
   svg:hover {
     cursor: default;
+  }
+
+  @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
+    position: relative;
+
+    p {
+      left: 105px;
+      position: absolute;
+      top: 20px;
+    }
   }
 `
