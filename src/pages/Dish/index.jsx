@@ -9,9 +9,15 @@ import { Button } from "../../components/Button"
 import { Tag } from "../../components/Tag"
 import { Section } from "../../components/Section"
 
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints"
+
+import { useMediaQuery } from "react-responsive"
+
 import theme from "../../styles/theme"
 
 export function Dish() {
+  const isDesktop = useMediaQuery({ minWidth: DEVICE_BREAKPOINTS.LG })
+
   return (
     <Container>
       <Navbar />
@@ -38,8 +44,8 @@ export function Dish() {
           <Amount text="01" />
           <Button
             bgColor={theme.COLORS.RED_100}
-            hasIcon={true}
-            text="pedir ∙ R$ 25,00"
+            hasIcon={isDesktop ? false : true}
+            text={isDesktop ? "incluir ∙ R$ 25,00" : "pedir ∙ R$ 25,00"}
           />
         </div>
       </main>

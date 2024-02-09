@@ -1,12 +1,9 @@
 import styled from "styled-components"
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints"
 
 export const Container = styled.div`
   width: 100%;
   min-height: 100vh;
-
-  h3 {
-    font-size: 13px;
-  }
 
   main {
     display: flex;
@@ -54,6 +51,61 @@ export const Container = styled.div`
       width: 188px;
       height: 38px;
       font-size: 9.5px;
+    }
+  }
+
+  @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
+    main {
+      display: grid;
+      grid-template-columns: 500px 500px;
+      grid-template-rows: 20px auto;
+      grid-template-areas:
+        "back back"
+        "img texto"
+        "img buttons"
+        "img buttons";
+      height: 100vh;
+    }
+
+    .back-btn {
+      margin: 0;
+      display: block;
+      grid-area: back;
+      > button {
+        font-size: 22px;
+        font-weight: bold;
+      }
+    }
+
+    section {
+      align-items: flex-start;
+      grid-area: texto;
+      margin-top: 100px;
+
+      h3 {
+        margin-left: 0;
+        font-size: 38px;
+      }
+
+      p {
+        font-size: 20px;
+      }
+    }
+
+    .order {
+      grid-area: buttons;
+      margin-bottom: 660px;
+
+      > button {
+        font-size: 14px;
+      }
+    }
+
+    img {
+      width: 390px;
+      height: 390px;
+      margin-bottom: 500px;
+      grid-area: img;
     }
   }
 `
