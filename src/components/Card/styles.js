@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import {DEVICE_BREAKPOINTS} from "../../styles/deviceBreakPoints"
 
 export const Container = styled.div`
   display: flex;
@@ -38,9 +39,34 @@ export const Container = styled.div`
     font-size: 15px;
     font-weight: 300;
   }
+
+  @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
+    width: 290px;
+    height: 450px;
+    gap: 6px;
+
+    img {
+      width: 160px;
+      height: 160px;
+    }
+
+    h4 {
+      font-size: 23px;
+      font-weight: 600;
+    }
+
+    .description {
+      margin: 10px;
+      text-align: center;
+    }
+
+    h5 {
+      font-size: 29.5px;
+    }
+  }
 `
 
-export const Order = styled.div`
+export const Add = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -48,5 +74,19 @@ export const Order = styled.div`
   button {
     height: 32px;
     width: 162px;
+  }
+
+  @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
+    flex-direction: row;
+    gap: 15px;
+
+    div {
+      margin-bottom: 0;
+    }
+
+    button {
+      width: 92px;
+      height: 46px;
+    }
   }
 `

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints"
 
 export const Container = styled.div`
@@ -12,6 +12,8 @@ export const Container = styled.div`
 
   h3 {
     color: ${({ theme }) => theme.COLORS.LIGHT_400};
+
+    font-size: 13px;
   }
 
   @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {

@@ -4,6 +4,11 @@ import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints"
 export const Container = styled.div`
   width: 100%;
   min-height: 100vh;
+
+  h3 {
+    font-size: 13px;
+  }
+
   main {
     display: grid;
     grid-template-columns: 1fr;
@@ -104,8 +109,12 @@ export const Container = styled.div`
     }
 
     swiper-container {
-      height: 292px;
+      height: 450px;
       width: 970px;
+    }
+
+    swiper-slide {
+      max-width: 320px;
     }
   }
 `

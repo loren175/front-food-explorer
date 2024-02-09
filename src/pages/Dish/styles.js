@@ -4,6 +4,10 @@ export const Container = styled.div`
   width: 100%;
   min-height: 100vh;
 
+  h3 {
+    font-size: 13px;
+  }
+
   main {
     display: flex;
     flex-direction: column;
