@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints"
 
@@ -39,6 +39,12 @@ export const Brand = styled.div`
 
   svg:hover {
     cursor: default;
+  }
+
+  @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
+    h1 {
+      font-size: 22px;
+    }
   }
 
   @media (max-width: ${DEVICE_BREAKPOINTS.SM}) {
