@@ -116,5 +116,34 @@ export const Container = styled.div`
     swiper-slide {
       max-width: 320px;
     }
+
+    swiper-container::before,
+    swiper-container::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 22.4rem;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    swiper-container::before {
+      left: 0;
+      background: linear-gradient(
+        90deg,
+        ${({ theme }) => theme.COLORS.GRADIENT_100} 0%,
+        transparent 100%
+      );
+    }
+
+    swiper-container::after {
+      right: 0;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        ${({ theme }) => theme.COLORS.GRADIENT_100} 100%
+      );
+    }
   }
 `
