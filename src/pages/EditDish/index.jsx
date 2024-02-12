@@ -13,11 +13,18 @@ import { IngredientItem } from "../../components/IngredientItem"
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints"
 
 import { useMediaQuery } from "react-responsive"
+import { useNavigate } from "react-router-dom"
 
 import theme from "../../styles/theme"
 
 export function EditDish() {
   const isDesktop = useMediaQuery({ minWidth: DEVICE_BREAKPOINTS.LG })
+
+  const navigate = useNavigate()
+
+  function handleBackClick() {
+    navigate(-1)
+  }
 
   return (
     <Container>
@@ -26,7 +33,7 @@ export function EditDish() {
       <main>
         <Form>
           <div className="back-btn">
-            <ButtonText text="< voltar" />
+            <ButtonText onClick={() => handleBackClick()} text="< voltar" />
           </div>
           <h2>Editar Prato</h2>
           <Section text="Imagem do prato">
@@ -80,7 +87,7 @@ export function EditDish() {
 
           <label className="grid-void-space"></label>
           <label className="grid-void-space"></label>
-          
+
           <div className="btns">
             <Button
               bgColor={theme.COLORS.DARK_800}
