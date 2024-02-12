@@ -10,17 +10,27 @@ import { PiUploadSimpleLight } from "react-icons/pi"
 import { RiArrowDownSLine } from "react-icons/ri"
 import { IngredientItem } from "../../components/IngredientItem"
 
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints"
+
+import { useMediaQuery } from "react-responsive"
+
 import theme from "../../styles/theme"
 
 export function NewDish() {
+  const isDesktop = useMediaQuery({ minWidth: DEVICE_BREAKPOINTS.LG })
+
   return (
     <Container>
       <SideMenu />
       <Navbar />
       <main>
         <Form>
-          <ButtonText className="back-" text="< voltar" />
-          <h2>Novo Prato</h2>
+          <div className="back-btn">
+            <ButtonText text="< voltar" />
+          </div>
+
+          {isDesktop ? <h2>Adicionar prato</h2> : <h2>Novo Prato</h2>}
+
           <Section text="Imagem do prato">
             <ImgUpload className="image">
               <label htmlFor="image">
@@ -43,23 +53,32 @@ export function NewDish() {
               <RiArrowDownSLine className="svgCategory" size={22} />
             </label>
           </Section>
+
           <Section text="Ingredientes">
             <div className="tags">
               <IngredientItem isNew placeholder="Adicionar" />
             </div>
           </Section>
+
+          <label className="grid-void-space"></label>
+
           <Section text="Preço">
             <Input background="dark_800" placeholder="R$ 00,00" />
           </Section>
-          <Section text="Descrição">
-            <textarea
-              placeholder="Fale brevemente sobre o prato, seus ingredientes e composição"
-              name=""
-              id=""
-              cols="30"
-              rows="10"
-            ></textarea>
-          </Section>
+          <div className="text-section">
+            <Section text="Descrição">
+              <textarea
+                placeholder="Fale brevemente sobre o prato, seus ingredientes e composição"
+                name=""
+                id=""
+                cols="30"
+                rows="10"
+              ></textarea>
+            </Section>
+          </div>
+
+          <label className="grid-void-space"></label>
+          <label className="grid-void-space"></label>
 
           <div className="btn">
             <Button bgColor={theme.COLORS.RED_400} text="Salvar alterações" />
