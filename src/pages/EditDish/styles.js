@@ -1,4 +1,6 @@
 import styled from "styled-components"
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints"
+
 
 export const Container = styled.div`
   width: 100%;
@@ -94,6 +96,38 @@ export const Form = styled.form`
     }
   }
 
+  @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+    grid-template-rows: 50px 70px 70px 80px 200px;
+    margin: 20px;
+    gap: 22px;
+
+    .back-btn {
+      > button {
+        font-size: 24px;
+        font-weight: bold;
+      }
+    }
+
+    h2 {
+      grid-column: 1 / -1;
+      font-weight: 400;
+      height: 100px;
+    }
+
+    .text-section {
+      grid-column: 1 / -1;
+    }
+
+    .tags {
+      height: auto;
+      width: 630px;
+      justify-content: normal;
+    }
+
+  }
 `
 
 export const ImgUpload = styled.div`

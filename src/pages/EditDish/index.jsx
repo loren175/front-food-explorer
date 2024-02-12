@@ -10,22 +10,34 @@ import { PiUploadSimpleLight } from "react-icons/pi"
 import { RiArrowDownSLine } from "react-icons/ri"
 import { IngredientItem } from "../../components/IngredientItem"
 
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints"
+
+import { useMediaQuery } from "react-responsive"
+
 import theme from "../../styles/theme"
 
 export function EditDish() {
+  const isDesktop = useMediaQuery({ minWidth: DEVICE_BREAKPOINTS.LG })
+
   return (
     <Container>
       <SideMenu />
       <Navbar />
       <main>
         <Form>
-          <ButtonText className="back-" text="< voltar" />
+          <div className="back-btn">
+            <ButtonText text="< voltar" />
+          </div>
           <h2>Editar Prato</h2>
           <Section text="Imagem do prato">
             <ImgUpload className="image">
               <label htmlFor="image">
                 <PiUploadSimpleLight size={24} />
-                <span>Selecione imagem para alterá-la</span>
+                {isDesktop ? (
+                  <span>Selecione imagem</span>
+                ) : (
+                  <span>Selecione imagem para alterá-la</span>
+                )}
               </label>
               <input className="upload" type="file" id="image" />
             </ImgUpload>
@@ -48,18 +60,27 @@ export function EditDish() {
               <IngredientItem isNew placeholder="Adicionar" />
             </div>
           </Section>
+
+          <label className="grid-void-space"></label>
+
           <Section text="Preço">
             <Input background="dark_800" placeholder="R$ 40,00" />
           </Section>
-          <Section text="Descrição">
-            <textarea
-              placeholder="A Salada Ceasar é uma opção refrescante para o verão."
-              name=""
-              id=""
-              cols="30"
-              rows="10"
-            ></textarea>
-          </Section>
+          <div className="text-section">
+            <Section text="Descrição">
+              <textarea
+                placeholder="A Salada Ceasar é uma opção refrescante para o verão."
+                name=""
+                id=""
+                cols="30"
+                rows="10"
+              ></textarea>
+            </Section>
+          </div>
+
+          <label className="grid-void-space"></label>
+          <label className="grid-void-space"></label>
+          
           <div className="btns">
             <Button
               bgColor={theme.COLORS.DARK_800}

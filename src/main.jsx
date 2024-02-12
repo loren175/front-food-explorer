@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client"
 import { ThemeProvider } from "styled-components"
 import theme from "./styles/theme.js"
 import GlobalStyles from "./styles/global.js"
-import { NewDish } from "./pages/NewDish/index.jsx"
+import { EditDish } from "./pages/EditDish/index.jsx"
 import { BrowserRouter } from "react-router-dom"
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -11,7 +11,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <BrowserRouter>
-        <NewDish />
+        <EditDish />
       </BrowserRouter>
     </ThemeProvider>
   </React.StrictMode>
