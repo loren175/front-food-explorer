@@ -15,7 +15,7 @@ import { useMediaQuery } from "react-responsive"
 
 import theme from "../../styles/theme"
 
-export function Dish() {
+export function Dish({ isAdmin }) {
   const isDesktop = useMediaQuery({ minWidth: DEVICE_BREAKPOINTS.LG })
 
   return (
@@ -41,12 +41,20 @@ export function Dish() {
         </Section>
 
         <div className="order">
-          <Amount text="01" />
-          <Button
-            bgColor={theme.COLORS.RED_100}
-            hasIcon={isDesktop ? false : true}
-            text={isDesktop ? "incluir ∙ R$ 25,00" : "pedir ∙ R$ 25,00"}
-          />
+          {!isAdmin && <Amount text="01" />}
+          {isAdmin ? (
+            <Button
+              bgColor={theme.COLORS.RED_100}
+              hasIcon={false}
+              text="Editar Prato"
+            />
+          ) : (
+            <Button
+              bgColor={theme.COLORS.RED_100}
+              hasIcon={isDesktop ? false : true}
+              text={isDesktop ? "incluir ∙ R$ 25,00" : "pedir ∙ R$ 25,00"}
+            />
+          )}
         </div>
       </main>
       <Footer />
