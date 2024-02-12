@@ -25,6 +25,7 @@ export const Container = styled.div`
   img {
     width: 95px;
     height: 95px;
+    cursor: pointer;
   }
 
   h4 {
