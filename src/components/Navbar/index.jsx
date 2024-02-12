@@ -30,6 +30,10 @@ export function Navbar({ isAdmin }) {
     navigate("/login")
   }
 
+  function handleNewClick() {
+    navigate("/new")
+  }
+
 
   return (
     <Container>
@@ -59,13 +63,21 @@ export function Navbar({ isAdmin }) {
           placeholder="Busque por pratos ou ingredientes"
         />
       )}
-      {isDesktop && (
-        <Button
-          hasIcon={isAdmin ? false : true}
-          bgColor={theme.COLORS.RED_200}
-          text={isAdmin ? "Novo Prato" : "Pedidos (0)"}
-        />
-      )}
+      {isDesktop &&
+        (isAdmin ? (
+          <Button
+            onClick={() => handleNewClick()}
+            hasIcon={false}
+            bgColor={theme.COLORS.RED_200}
+            text="Novo Prato"
+          />
+        ) : (
+          <Button
+            hasIcon={true}
+            bgColor={theme.COLORS.RED_200}
+            text="Pedidos (0)"
+          />
+        ))}
 
       {!isDesktop ? (
         !isAdmin && (
