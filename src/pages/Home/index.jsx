@@ -10,6 +10,7 @@ import homeImgDesk from "../../assets/home-img-desk.png"
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints"
 
 import { useMediaQuery } from "react-responsive"
+
 import { register } from "swiper/element/bundle"
 
 register()

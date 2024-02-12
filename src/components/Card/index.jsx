@@ -11,20 +11,26 @@ import { useNavigate } from "react-router-dom"
 
 import theme from "../../styles/theme"
 
-
 export function Card({ isAdmin }) {
   const isDesktop = useMediaQuery({ minWidth: DEVICE_BREAKPOINTS.LG })
 
-   const navigate = useNavigate()
+  const navigate = useNavigate()
 
-   function handleDishClick() {
-     navigate("/dish")
-   }
+  function handleDishClick() {
+    navigate("/dish")
+  }
+
+  function handleEditClick() {
+    navigate("/edit")
+  }
 
   return (
     <Container>
       {isAdmin ? (
-        <PiPencilSimple className="card-icons" />
+        <PiPencilSimple
+          onClick={() => handleEditClick()}
+          className="card-icons"
+        />
       ) : (
         <PiHeart className="card-icons" />
       )}
