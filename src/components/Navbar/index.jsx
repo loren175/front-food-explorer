@@ -6,6 +6,7 @@ import theme from "../../styles/theme"
 
 import { PiList, PiNewspaperClipping, PiSignOut } from "react-icons/pi"
 import { useState, useEffect } from "react"
+import { useNavigate } from "react-router-dom"
 import { useMediaQuery } from "react-responsive"
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints"
 
@@ -22,6 +23,13 @@ export function Navbar({ isAdmin }) {
     }, 2000)
     return () => clearInterval(intervalId)
   }, [])
+
+  const navigate = useNavigate()
+
+  function handleLogout() {
+    navigate("/login")
+  }
+
 
   return (
     <Container>
@@ -67,7 +75,7 @@ export function Navbar({ isAdmin }) {
           </>
         )
       ) : (
-        <PiSignOut size={24} />
+        <PiSignOut size={24} onClick={() => handleLogout()} />
       )}
     </Container>
   )
