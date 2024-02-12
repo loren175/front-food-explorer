@@ -13,11 +13,18 @@ import { IngredientItem } from "../../components/IngredientItem"
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints"
 
 import { useMediaQuery } from "react-responsive"
+import { useNavigate } from "react-router-dom"
 
 import theme from "../../styles/theme"
 
 export function NewDish() {
   const isDesktop = useMediaQuery({ minWidth: DEVICE_BREAKPOINTS.LG })
+
+  const navigate = useNavigate()
+
+  function handleBackClick() {
+    navigate(-1)
+  }
 
   return (
     <Container>
@@ -26,7 +33,7 @@ export function NewDish() {
       <main>
         <Form>
           <div className="back-btn">
-            <ButtonText text="< voltar" />
+            <ButtonText onClick={() => handleBackClick()} text="< voltar" />
           </div>
 
           {isDesktop ? <h2>Adicionar prato</h2> : <h2>Novo Prato</h2>}
