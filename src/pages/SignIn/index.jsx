@@ -4,9 +4,21 @@ import { Button } from "../../components/Button"
 import { ButtonText } from "../../components/ButtonText"
 import { Section } from "../../components/Section"
 
+import { useNavigate } from "react-router-dom"
+
 import theme from "../../styles/theme"
 
 export function SignIn() {
+  const navigate = useNavigate()
+
+  function handleRegisterClick() {
+    navigate("/register")
+  }
+
+  function handleEnterClick() {
+    navigate("/")
+  }
+
   return (
     <Container>
       <Brand>
@@ -41,8 +53,12 @@ export function SignIn() {
           />
         </Section>
 
-        <Button bgColor={theme.COLORS.RED_100} text="Entrar" />
-        <ButtonText text="Criar uma conta" />
+        <Button
+          bgColor={theme.COLORS.RED_100}
+          onClick={() => handleEnterClick()}
+          text="Entrar"
+        />
+        <ButtonText onClick={() => handleRegisterClick()} text="Criar uma conta" />
       </Form>
     </Container>
   )

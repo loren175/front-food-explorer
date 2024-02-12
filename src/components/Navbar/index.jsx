@@ -26,7 +26,7 @@ export function Navbar({ isAdmin }) {
 
   const navigate = useNavigate()
 
-  function handleLogout() {
+  function handleLogoutClick() {
     navigate("/login")
   }
 
@@ -75,7 +75,7 @@ export function Navbar({ isAdmin }) {
           </>
         )
       ) : (
-        <PiSignOut size={24} onClick={() => handleLogout()} />
+        <PiSignOut size={24} onClick={() => handleLogoutClick()} />
       )}
     </Container>
   )

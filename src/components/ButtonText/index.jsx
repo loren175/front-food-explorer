@@ -1,5 +1,9 @@
 import { Container } from "./styles"
 
-export function ButtonText({ text }) {
-  return <Container type="button">{text}</Container>
+export function ButtonText({ text, onClick }) {
+  return (
+    <Container onClick={onClick} type="button">
+      {text}
+    </Container>
+  )
 }
