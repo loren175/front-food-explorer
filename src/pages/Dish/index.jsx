@@ -12,11 +12,18 @@ import { Section } from "../../components/Section"
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints"
 
 import { useMediaQuery } from "react-responsive"
+import { useNavigate } from "react-router-dom"
 
 import theme from "../../styles/theme"
 
 export function Dish({ isAdmin }) {
   const isDesktop = useMediaQuery({ minWidth: DEVICE_BREAKPOINTS.LG })
+
+   const navigate = useNavigate()
+
+   function handleBackClick() {
+     navigate(-1)
+   }
 
   return (
     <Container>
@@ -24,7 +31,7 @@ export function Dish({ isAdmin }) {
       <SideMenu />
       <main>
         <div className="back-btn">
-          <ButtonText text="< voltar" />
+          <ButtonText onClick={() => handleBackClick()} text="< voltar" />
         </div>
         <img src={food1} alt="" />
 
