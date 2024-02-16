@@ -14,7 +14,8 @@ import theme from "../../styles/theme"
 export function SignIn() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-  const signIn = useAuth()
+
+  const { signIn } = useAuth()
 
   const navigate = useNavigate()
 
@@ -23,9 +24,7 @@ export function SignIn() {
   }
 
   function handleSignInClick() {
-    signIn({ email, password }).then(() => {
-      navigate("/")
-    })
+    signIn({ email, password }).then(navigate("/"))
   }
 
   return (
@@ -52,7 +51,7 @@ export function SignIn() {
             widthStyle="316px"
             placeholder="Exemplo: exemplo@exemplo.com.br"
             type="email"
-            onChange={setEmail}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </Section>
         <Section text="Senha">
@@ -60,13 +59,13 @@ export function SignIn() {
             widthStyle="316px"
             placeholder="No mínimo 6 caracteres"
             type="password"
-            onChange={setPassword}
+            onChange={(e) => setPassword(e.target.value)}
           />
         </Section>
 
         <Button
           bgColor={theme.COLORS.RED_100}
-          onClick={() => handleSignInClick()}
+          onClick={handleSignInClick}
           text="Entrar"
         />
         <ButtonText
