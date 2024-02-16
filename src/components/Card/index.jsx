@@ -44,8 +44,11 @@ export function Card({ isAdmin }) {
       <h5>R$ 00,00</h5>
       {!isAdmin && (
         <Add>
-          <Amount text="01" />
-          <Button bgColor={theme.COLORS.RED_100} text="Incluir" />
+          <Amount />
+          <Button
+            bgColor={theme.COLORS.RED_100}
+            text="Incluir"
+          />
         </Add>
       )}
     </Container>

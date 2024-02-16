@@ -10,7 +10,6 @@ import homeImgDesk from "../../assets/home-img-desk.png"
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints"
 
 import { useMediaQuery } from "react-responsive"
-
 import { register } from "swiper/element/bundle"
 
 register()
@@ -25,7 +24,11 @@ export function Home() {
       <main>
         <div>
           <header className="banner">
-            <img className="banner-img" src={isDesktop ? homeImgDesk : homeImg} alt="" />
+            <img
+              className="banner-img"
+              src={isDesktop ? homeImgDesk : homeImg}
+              alt=""
+            />
             <div className="banner-text">
               <h2>Sabores inigualáveis</h2>
               <p>Sinta o cuidado do preparo com ingredientes selecionados.</p>

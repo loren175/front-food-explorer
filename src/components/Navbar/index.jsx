@@ -13,17 +13,6 @@ import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints"
 export function Navbar({ isAdmin }) {
   const isDesktop = useMediaQuery({ minWidth: DEVICE_BREAKPOINTS.LG })
 
-  const [itemCount, setItemCount] = useState(0)
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      // Atualiza o número de itens no carrinho com um valor aleatório (apenas para fins de demonstração)
-      const randomCount = Math.floor(Math.random() * 10)
-      setItemCount(randomCount)
-    }, 2000)
-    return () => clearInterval(intervalId)
-  }, [])
-
   const navigate = useNavigate()
 
   function handleLogoutClick() {
@@ -33,7 +22,6 @@ export function Navbar({ isAdmin }) {
   function handleNewClick() {
     navigate("/new")
   }
-
 
   return (
     <Container>
@@ -83,7 +71,7 @@ export function Navbar({ isAdmin }) {
         !isAdmin && (
           <>
             <PiNewspaperClipping className="order-svg" size={24} />
-            <div className="counter">{itemCount}</div>
+            <div className="counter">0</div>
           </>
         )
       ) : (
