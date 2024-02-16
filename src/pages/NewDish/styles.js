@@ -92,13 +92,17 @@ export const Form = styled.form`
     }
   }
 
+  .grid-void-space {
+    z-index: -1;
+  }
+
   @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
     height: 100vh;
     display: grid;
     grid-template-columns: 300px 300px 300px;
-    grid-template-rows: 50px 70px 70px 80px 200px;
+    grid-template-rows: 50px 70px 70px auto 200px;
     margin: 20px;
-    gap: 22px;
+    gap: 42px;
 
     .back-btn {
       > button {
@@ -129,6 +133,10 @@ export const Form = styled.form`
         width: 180px;
       }
     }
+  }
+
+  > section {
+    margin-bottom: 0;
   }
 `
 

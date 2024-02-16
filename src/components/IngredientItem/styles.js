@@ -4,9 +4,9 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   background-color: ${({ theme, isNew }) =>
-    isNew ? ` ${theme.COLORS.LIGHT_600}` : "transparent"};
+    !isNew ? ` ${theme.COLORS.LIGHT_600}` : "transparent"};
   border: ${({ theme, isNew }) =>
-    isNew ? "none" : `1px dashed ${theme.COLORS.LIGHT_500}`};
+    !isNew ? "none" : `1px dashed ${theme.COLORS.LIGHT_500}`};
   color: ${({ theme }) => theme.COLORS.LIGHT_100};
   border-radius: 10px;
   padding-right: 16px;
@@ -35,7 +35,7 @@ export const Container = styled.div`
     font-size: 14px;
 
     color: ${({ theme, isNew }) =>
-      isNew
+      !isNew
         ? ` ${theme.COLORS.LIGHT_100}`
         : `${theme.COLORS.LIGHT_500}
       `};

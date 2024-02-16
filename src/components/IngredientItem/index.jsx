@@ -1,13 +1,15 @@
 import { Container } from "./styles"
 import { PiPlus, PiX } from "react-icons/pi"
 
-export function IngredientItem({ isNew, ...rest }) {
+export function IngredientItem({ isNew, value, onClick, ...rest }) {
   return (
-    <Container>
+    <Container isNew={isNew}>
       <input 
-      type="text" 
+      type="text"
+      value={value} 
       readOnly={!isNew} {...rest} />
-      <button 
+      <button
+      onClick={onClick} 
       type="button" 
       className={isNew ? "button-add" : "button-delete"}>
         {isNew ? <PiPlus /> : <PiX />}

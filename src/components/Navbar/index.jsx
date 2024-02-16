@@ -50,7 +50,7 @@ export function Navbar({ isAdmin }) {
         />
       )}
       {isDesktop &&
-        (isAdmin ? (
+        (!isAdmin ? (
           <Button
             onClick={() => handleNewClick()}
             hasIcon={false}

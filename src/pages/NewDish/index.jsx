@@ -14,11 +14,20 @@ import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints"
 
 import { useMediaQuery } from "react-responsive"
 import { useNavigate } from "react-router-dom"
+import { useState } from "react"
 
 import theme from "../../styles/theme"
 
 export function NewDish() {
   const isDesktop = useMediaQuery({ minWidth: DEVICE_BREAKPOINTS.LG })
+
+  const [ingredients, setIngredients] = useState([])
+  const [newIngredients, setNewIngredients] = useState("")
+
+  function handleAddIngredient() {
+    setIngredients((prevState) => [...prevState, newIngredients])
+    setNewIngredients("")
+  }
 
   const navigate = useNavigate()
 
@@ -63,7 +72,20 @@ export function NewDish() {
 
           <Section text="Ingredientes">
             <div className="tags">
-              <IngredientItem isNew placeholder="Adicionar" />
+              {ingredients.map((ingredient, index) => (
+                <IngredientItem
+                  key={String(index)}
+                  value={ingredient}
+                  onClick={() => {}}
+                />
+              ))}
+              <IngredientItem
+                isNew
+                placeholder="Adicionar"
+                value={newIngredients}
+                onChange={(e) => setNewIngredients(e.target.value)}
+                onClick={handleAddIngredient}
+              />
             </div>
           </Section>
 
