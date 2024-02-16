@@ -29,6 +29,10 @@ export function NewDish() {
     setNewIngredients("")
   }
 
+  function handleRemoveIngredient(deleted){
+    setIngredients(prevState => prevState.filter(ingredient => ingredient !== deleted))
+  }
+
   const navigate = useNavigate()
 
   function handleBackClick() {
@@ -76,7 +80,7 @@ export function NewDish() {
                 <IngredientItem
                   key={String(index)}
                   value={ingredient}
-                  onClick={() => {}}
+                  onClick={() => handleRemoveIngredient(ingredient)}
                 />
               ))}
               <IngredientItem
