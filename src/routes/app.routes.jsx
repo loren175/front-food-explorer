@@ -7,7 +7,7 @@ import { NewDish } from "../pages/NewDish/index.jsx"
 export function AppRoutes() {
   return (
     <Routes>
-      <Route path="/home" element={<Home />} />
+      <Route path="/" element={<Home />} />
       <Route path="/dish" element={<Dish />} />
       <Route path="/edit" element={<EditDish />} />
       <Route path="/new" element={<NewDish />} />
