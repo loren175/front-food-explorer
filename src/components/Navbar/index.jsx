@@ -1,11 +1,11 @@
 import { Container, Brand } from "./styles"
+import { useAuth } from "../../hooks/auth"
 
 import { Input } from "../Input"
 import { Button } from "../Button"
 import theme from "../../styles/theme"
 
 import { PiList, PiNewspaperClipping, PiSignOut } from "react-icons/pi"
-import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { useMediaQuery } from "react-responsive"
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints"
@@ -13,11 +13,9 @@ import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints"
 export function Navbar({ isAdmin }) {
   const isDesktop = useMediaQuery({ minWidth: DEVICE_BREAKPOINTS.LG })
 
-  const navigate = useNavigate()
+  const { signOut } = useAuth()
 
-  function handleLogoutClick() {
-    navigate("/login")
-  }
+  const navigate = useNavigate()
 
   function handleNewClick() {
     navigate("/new")
@@ -75,7 +73,7 @@ export function Navbar({ isAdmin }) {
           </>
         )
       ) : (
-        <PiSignOut size={24} onClick={() => handleLogoutClick()} />
+        <PiSignOut size={24} onClick={signOut} />
       )}
     </Container>
   )
