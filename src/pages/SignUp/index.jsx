@@ -25,7 +25,7 @@ export function SignUp() {
     api.post("/users", { name, email, password })
       .then(() => {
         alert("Usuário cadastrado.")
-        navigate("/login")
+        navigate("/")
       })
       .catch((error) => {
         if (error.response) {
@@ -37,7 +37,7 @@ export function SignUp() {
   }
 
   function handleBackToLoginClick() {
-    navigate("/login")
+    navigate("/")
   }
 
   return (

@@ -24,7 +24,7 @@ export function SignIn() {
   }
 
   function handleSignInClick() {
-    signIn({ email, password }).then(navigate("/"))
+    signIn({ email, password }).then(navigate("/home"))
   }
 
   return (
