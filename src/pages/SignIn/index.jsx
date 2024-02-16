@@ -4,19 +4,28 @@ import { Button } from "../../components/Button"
 import { ButtonText } from "../../components/ButtonText"
 import { Section } from "../../components/Section"
 
+import { useAuth } from "../../hooks/auth"
+
+import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 import theme from "../../styles/theme"
 
 export function SignIn() {
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const signIn = useAuth()
+
   const navigate = useNavigate()
 
   function handleRegisterClick() {
     navigate("/register")
   }
 
-  function handleEnterClick() {
-    navigate("/")
+  function handleSignInClick() {
+    signIn({ email, password }).then(() => {
+      navigate("/")
+    })
   }
 
   return (
@@ -43,6 +52,7 @@ export function SignIn() {
             widthStyle="316px"
             placeholder="Exemplo: exemplo@exemplo.com.br"
             type="email"
+            onChange={setEmail}
           />
         </Section>
         <Section text="Senha">
@@ -50,15 +60,19 @@ export function SignIn() {
             widthStyle="316px"
             placeholder="No mínimo 6 caracteres"
             type="password"
+            onChange={setPassword}
           />
         </Section>
 
         <Button
           bgColor={theme.COLORS.RED_100}
-          onClick={() => handleEnterClick()}
+          onClick={() => handleSignInClick()}
           text="Entrar"
         />
-        <ButtonText onClick={() => handleRegisterClick()} text="Criar uma conta" />
+        <ButtonText
+          onClick={() => handleRegisterClick()}
+          text="Criar uma conta"
+        />
       </Form>
     </Container>
   )
