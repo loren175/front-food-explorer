@@ -17,7 +17,17 @@ export function Navbar({ setSearch, isAdmin }) {
 
   const navigate = useNavigate()
 
-  function handleNewClick() {
+  function handleSignOutClick() {
+    const confirmLogout = confirm("Deseja mesmo sair?")
+    if (confirmLogout) {
+      navigate("/")
+      signOut()
+    } else {
+      return
+    }
+  }
+
+  function handleNewDishClick() {
     navigate("/new")
   }
 
@@ -54,7 +64,7 @@ export function Navbar({ setSearch, isAdmin }) {
       {isDesktop &&
         (!isAdmin ? (
           <Button
-            onClick={() => handleNewClick()}
+            onClick={() => handleNewDishClick()}
             hasIcon={false}
             bgColor={theme.COLORS.RED_200}
             text="Novo Prato"
@@ -75,7 +85,7 @@ export function Navbar({ setSearch, isAdmin }) {
           </>
         )
       ) : (
-        <PiSignOut size={24} onClick={signOut} />
+        <PiSignOut size={24} onClick={handleSignOutClick} />
       )}
     </Container>
   )
