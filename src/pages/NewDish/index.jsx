@@ -154,7 +154,7 @@ export function NewDish() {
                 <option value="">Selecionar</option>
                 <option value="meal">Refeição</option>
                 <option value="dessert">Sobremesa</option>
-                <option value="drink">Bebidda</option>
+                <option value="drink">Bebidas</option>
               </select>
               <RiArrowDownSLine className="svgCategory" size={22} />
             </label>

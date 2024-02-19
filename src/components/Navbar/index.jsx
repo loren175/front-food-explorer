@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom"
 import { useMediaQuery } from "react-responsive"
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints"
 
-export function Navbar({ isAdmin }) {
+export function Navbar({ setSearch, isAdmin }) {
   const isDesktop = useMediaQuery({ minWidth: DEVICE_BREAKPOINTS.LG })
 
   const { signOut } = useAuth()
@@ -47,6 +47,8 @@ export function Navbar({ isAdmin }) {
           widthStyle="480px"
           hasIcon={true}
           placeholder="Busque por pratos ou ingredientes"
+          setSearch={setSearch}
+          onChange={(e) => setSearch(e.target.value)}
         />
       )}
       {isDesktop &&

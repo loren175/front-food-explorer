@@ -11,16 +11,37 @@ import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints"
 
 import { useMediaQuery } from "react-responsive"
 import { register } from "swiper/element/bundle"
+import { useEffect, useState } from "react"
+import { api } from "../../services/api"
 
 register()
 
 export function Home() {
   const isDesktop = useMediaQuery({ minWidth: DEVICE_BREAKPOINTS.LG })
 
+  const [dishes, setDishes] = useState({ meals: [], desserts: [], drinks: [] })
+
+  const [search, setSearch] = useState("")
+
+  useEffect(() => {
+    async function fetchDishes() {
+      const response = await api.get(`/dish?search=${search}`)
+      const meals = response.data.filter((dish) => dish.category === "meal")
+      const desserts = response.data.filter(
+        (dish) => dish.category === "dessert"
+      )
+      const drinks = response.data.filter((dish) => dish.category === "drink")
+
+      setDishes({ meals, desserts, drinks })
+    }
+
+    fetchDishes()
+  }, [search])
+
   return (
     <Container>
       <SideMenu />
-      <Navbar />
+      <Navbar setSearch={setSearch} />
       <main>
         <div>
           <header className="banner">
@@ -44,12 +65,12 @@ export function Home() {
             loop="true"
             grab-cursor="true"
           >
-            <swiper-slide>
-              <Card />
-            </swiper-slide>
-            <swiper-slide>
-              <Card />
-            </swiper-slide>
+            {dishes &&
+              dishes.meals.map((dish) => (
+                <swiper-slide key={String(dish.id)}>
+                  <Card data={dish} />
+                </swiper-slide>
+              ))}
           </swiper-container>
         </Section>
         <Section text="Sobremesas">
@@ -60,18 +81,12 @@ export function Home() {
             loop="true"
             grab-cursor="true"
           >
-            <swiper-slide>
-              <Card />
-            </swiper-slide>
-            <swiper-slide>
-              <Card />
-            </swiper-slide>
-            <swiper-slide>
-              <Card />
-            </swiper-slide>
-            <swiper-slide>
-              <Card />
-            </swiper-slide>
+            {dishes &&
+              dishes.desserts.map((dish) => (
+                <swiper-slide key={String(dish.id)}>
+                  <Card data={dish} />
+                </swiper-slide>
+              ))}
           </swiper-container>
         </Section>
         <Section text="Bebidas">
@@ -82,12 +97,12 @@ export function Home() {
             loop="true"
             grab-cursor="true"
           >
-            <swiper-slide>
-              <Card />
-            </swiper-slide>
-            <swiper-slide>
-              <Card />
-            </swiper-slide>
+            {dishes &&
+              dishes.drinks.map((dish) => (
+                <swiper-slide key={String(dish.id)}>
+                  <Card data={dish} />
+                </swiper-slide>
+              ))}
           </swiper-container>
         </Section>
       </main>

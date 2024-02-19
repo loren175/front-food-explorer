@@ -3,7 +3,7 @@ import { Input } from "../Input"
 import { PiX } from "react-icons/pi"
 import { ButtonText } from "../ButtonText"
 
-export function SideMenu({ isAdmin }) {
+export function SideMenu({ setSearch, isAdmin }) {
   return (
     <Container>
       <div className="menu-header">
@@ -14,15 +14,16 @@ export function SideMenu({ isAdmin }) {
         <Input
           className="menu-search"
           hasIcon={true}
+          setSearch={setSearch}
           placeholder="Busque por pratos ou ingredientes"
         />
         {isAdmin && (
           <div className="btn-border">
-            <ButtonText text="Novo Prato"/>
+            <ButtonText text="Novo Prato" />
           </div>
         )}
         <div className="btn-border">
-          <ButtonText text="Sair"/>
+          <ButtonText text="Sair" />
         </div>
       </div>
     </Container>
