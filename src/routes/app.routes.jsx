@@ -8,8 +8,8 @@ export function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/dish" element={<Dish />} />
-      <Route path="/edit" element={<EditDish />} />
+      <Route path="/dish/:id" element={<Dish />} />
+      <Route path="/edit/:id" element={<EditDish />} />
       <Route path="/new" element={<NewDish />} />
 
       <Route path="*" element={<Navigate to="/" />} />

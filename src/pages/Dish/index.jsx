@@ -12,58 +12,91 @@ import { Section } from "../../components/Section"
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints"
 
 import { useMediaQuery } from "react-responsive"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 
 import theme from "../../styles/theme"
+import { useEffect, useState } from "react"
+import { api } from "../../services/api"
 
 export function Dish({ isAdmin }) {
   const isDesktop = useMediaQuery({ minWidth: DEVICE_BREAKPOINTS.LG })
 
-   const navigate = useNavigate()
+  const params = useParams()
+  const [data, setData] = useState(null)
+  const [number, setNumber] = useState(1)
 
-   function handleBackClick() {
-     navigate(-1)
-   }
+  useEffect(() => {
+    async function fetchDish() {
+      const response = await api.get(`/dish/${params.id}`)
+      setData(response.data)
+    }
+
+    fetchDish()
+  }, [])
+
+  const navigate = useNavigate()
+
+  function handleEditClick() {
+    navigate(`/edit/${params.id}`)
+  }
+
+  function handleBackClick() {
+    navigate(-1)
+  }
 
   return (
     <Container>
       <Navbar />
       <SideMenu />
-      <main>
-        <div className="back-btn">
-          <ButtonText onClick={() => handleBackClick()} text="< voltar" />
-        </div>
-        <img src={food1} alt="" />
-
-        <Section text="Salada">
-          <p>
-            Rabanetes, folhas verdes e molho agridoce salpicados com gergelim.
-          </p>
-          <div className="tag-area">
-            <Tag text="alface" />
-            <Tag text="alface" />
-            <Tag text="alface" />
-            <Tag text="alface" />
+      {data && (
+        <main>
+          <div className="back-btn">
+            <ButtonText onClick={() => handleBackClick()} text="< voltar" />
           </div>
-        </Section>
+          <img
+            src={`${api.defaults.baseURL}/files/${data.image}`}
+            alt={data.name}
+          />
 
-        <div className="order">
-          {!isAdmin && <Amount text="01" />}
-          {isAdmin ? (
-            <Button
-              bgColor={theme.COLORS.RED_100}
-              hasIcon={false}
-              text="Editar Prato"
-            />
-          ) : (
-            <Button
-              bgColor={theme.COLORS.RED_100}
-              hasIcon={isDesktop ? false : true}
-              text={isDesktop ? "incluir ∙ R$ 25,00" : "pedir ∙ R$ 25,00"}
-            />
-          )}
-        </div>
-      </main>
+          <Section text={data.name}>
+            <p>{data.description}</p>
+            {data.ingredients && (
+              <div className="tag-area">
+                {data.ingredients.map((ingredient) => (
+                  <Tag key={String(ingredient.id)} text={ingredient.name} />
+                ))}
+              </div>
+            )}
+          </Section>
+
+          <div className="order">
+            {!isAdmin && <Amount text="01" />}
+            {isAdmin ? (
+              <Button
+                bgColor={theme.COLORS.RED_100}
+                hasIcon={false}
+                text="Editar Prato"
+              />
+            ) : (
+              <Button
+                bgColor={theme.COLORS.RED_100}
+                hasIcon={isDesktop ? false : true}
+                text={
+                  isDesktop
+                    ? `incluir ∙ R$ ${(data.price * number).toLocaleString(
+                        "pt-BR",
+                        { minimumFractionDigits: 2 }
+                      )}`
+                    : `pedir ∙ R$ ${(data.price * number).toLocaleString(
+                        "pt-BR",
+                        { minimumFractionDigits: 2 }
+                      )}`
+                }
+              />
+            )}
+          </div>
+        </main>
+      )}
       <Footer />
     </Container>
   )

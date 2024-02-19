@@ -13,11 +13,18 @@ import { useMediaQuery } from "react-responsive"
 import { register } from "swiper/element/bundle"
 import { useEffect, useState } from "react"
 import { api } from "../../services/api"
+import { useNavigate } from "react-router-dom"
 
 register()
 
 export function Home() {
   const isDesktop = useMediaQuery({ minWidth: DEVICE_BREAKPOINTS.LG })
+
+  const navigate = useNavigate()
+
+  function handleDishClick(id) {
+    navigate(`/dish/${id}`)
+  }
 
   const [dishes, setDishes] = useState({ meals: [], desserts: [], drinks: [] })
 
@@ -68,7 +75,7 @@ export function Home() {
             {dishes &&
               dishes.meals.map((dish) => (
                 <swiper-slide key={String(dish.id)}>
-                  <Card data={dish} />
+                  <Card handleDishClick={handleDishClick} data={dish} />
                 </swiper-slide>
               ))}
           </swiper-container>
@@ -84,7 +91,7 @@ export function Home() {
             {dishes &&
               dishes.desserts.map((dish) => (
                 <swiper-slide key={String(dish.id)}>
-                  <Card data={dish} />
+                  <Card handleDishClick={handleDishClick} data={dish} />
                 </swiper-slide>
               ))}
           </swiper-container>
@@ -100,7 +107,7 @@ export function Home() {
             {dishes &&
               dishes.drinks.map((dish) => (
                 <swiper-slide key={String(dish.id)}>
-                  <Card data={dish} />
+                  <Card handleDishClick={handleDishClick} data={dish} />
                 </swiper-slide>
               ))}
           </swiper-container>
