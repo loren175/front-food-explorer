@@ -3,7 +3,6 @@ import { Navbar } from "../../components/Navbar"
 import { Footer } from "../../components/Footer"
 import { SideMenu } from "../../components/SideMenu"
 import { ButtonText } from "../../components/ButtonText"
-import food1 from "../../assets/food1.png"
 import { Amount } from "../../components/Amount"
 import { Button } from "../../components/Button"
 import { Tag } from "../../components/Tag"
@@ -70,12 +69,13 @@ export function Dish({ isAdmin }) {
           </Section>
 
           <div className="order">
-            {!isAdmin && <Amount text="01" />}
+            {!isAdmin && <Amount />}
             {isAdmin ? (
               <Button
                 bgColor={theme.COLORS.RED_100}
                 hasIcon={false}
                 text="Editar Prato"
+                onClick={handleEditClick}
               />
             ) : (
               <Button
@@ -85,11 +85,15 @@ export function Dish({ isAdmin }) {
                   isDesktop
                     ? `incluir ∙ R$ ${(data.price * number).toLocaleString(
                         "pt-BR",
-                        { minimumFractionDigits: 2 }
+                        {
+                          minimumFractionDigits: 2,
+                        }
                       )}`
                     : `pedir ∙ R$ ${(data.price * number).toLocaleString(
                         "pt-BR",
-                        { minimumFractionDigits: 2 }
+                        {
+                          minimumFractionDigits: 2,
+                        }
                       )}`
                 }
               />

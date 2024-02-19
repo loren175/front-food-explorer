@@ -183,7 +183,9 @@ export function EditDish() {
                 {isDesktop ? (
                   <span>{fileName || "Selecione imagem"}</span>
                 ) : (
-                  <span>{fileName || "Selecione uma imagem para altera-la."}</span>
+                  <span>
+                    {fileName || "Selecione uma imagem para altera-la."}
+                  </span>
                 )}
               </label>
               <input
