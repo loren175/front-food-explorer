@@ -52,6 +52,7 @@ export const Brand = styled.div`
   display: flex;
   align-items: center;
   gap: 6px;
+  cursor: pointer;
 
   h1 {
     font-size: 19px;
@@ -61,10 +62,6 @@ export const Brand = styled.div`
     color: ${({ theme }) => theme.COLORS.BLUE_200};
     font-size: 11.8px;
     padding-right: 40px;
-  }
-
-  svg:hover {
-    cursor: default;
   }
 
   @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {

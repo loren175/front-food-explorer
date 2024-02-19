@@ -31,11 +31,15 @@ export function Navbar({ setSearch, isAdmin }) {
     navigate("/new")
   }
 
+  function handleHomeClick() {
+    navigate("/")
+  }
+
   return (
     <Container>
       {!isDesktop && <PiList size={24} />}
 
-      <Brand>
+      <Brand onClick={handleHomeClick}>
         <svg
           width="24"
           height="24"
