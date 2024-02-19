@@ -33,6 +33,7 @@ export const Container = styled.div`
     font-family: "Poppins";
     font-size: 14px;
     font-weight: 300;
+    cursor: pointer;
   }
 
   h5 {

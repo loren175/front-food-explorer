@@ -17,14 +17,14 @@ export function Card({ handleDishClick, data, isAdmin, ...rest }) {
   const navigate = useNavigate()
 
   function handleEditClick() {
-    navigate("/edit")
+    navigate(`/edit/${data.id}`)
   }
 
   return (
     <Container {...rest}>
       {isAdmin ? (
         <PiPencilSimple
-          onClick={() => handleEditClick()}
+          onClick={handleEditClick}
           className="card-icons"
         />
       ) : (
@@ -35,7 +35,7 @@ export function Card({ handleDishClick, data, isAdmin, ...rest }) {
         src={`${api.defaults.baseURL}/files/${data.image}`}
         alt=""
       />
-      <h4>{data.name} &gt; </h4>
+      <h4 onClick={() => handleDishClick(data.id)}>{data.name} &gt; </h4>
       {isDesktop && <p className="description">{data.description}</p>}
       <h5>
         R$ {data.price.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}
