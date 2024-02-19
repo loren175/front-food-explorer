@@ -10,6 +10,8 @@ import { PiUploadSimpleLight } from "react-icons/pi"
 import { RiArrowDownSLine } from "react-icons/ri"
 import { IngredientItem } from "../../components/IngredientItem"
 
+import { api } from "../../services/api"
+
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints"
 
 import { useMediaQuery } from "react-responsive"
@@ -21,6 +23,73 @@ import theme from "../../styles/theme"
 export function NewDish() {
   const isDesktop = useMediaQuery({ minWidth: DEVICE_BREAKPOINTS.LG })
 
+  const [name, setName] = useState("")
+  const [description, setDescription] = useState("")
+  const [price, setPrice] = useState("")
+  const [category, setCategory] = useState("")
+
+  const [image, setImage] = useState(null)
+  const [fileName, setFileName] = useState("")
+
+  function handleImageUpload(e) {
+    const file = e.target.files[0]
+    setImage(file)
+    setFileName(file.name)
+  }
+
+  async function handleNewDish() {
+     if (!image) {
+       return alert("Selecione a imagem do prato.")
+     }
+
+     if (!name) {
+       return alert("Digite o nome do prato.")
+     }
+
+     if (!category) {
+       return alert("Selecione a categoria do prato.")
+     }
+
+     if (ingredients.length === 0) {
+       return alert("Informe pelo menos um ingrediente do prato.")
+     }
+
+     if (newIngredients) {
+       return alert(
+         "Você deixou um ingrediente no campo para adicionar, mas não clicou em adicionar. Clique para adicionar ou deixe o campo vazio."
+       )
+     }
+
+     if (!price) {
+       return alert("Digite o preço do prato.")
+     }
+
+     if (!description) {
+       return alert("Digite a descrição do prato.")
+     }
+
+    const formData = new FormData()
+    formData.append("image", image)
+    formData.append("name", name)
+    formData.append("category", category)
+    formData.append("price", price)
+    formData.append("description", description)
+
+    formData.append("ingredients", JSON.stringify(ingredients))
+
+    try {
+      await api.post("/dish", formData)
+      alert("Prato cadastrado com sucesso!")
+      navigate(-1)
+    } catch (error) {
+      if (error.response) {
+        alert(error.response.data.message)
+      } else {
+        alert("Não foi possível cadastrar o prato.")
+      }
+    }
+  }
+
   const [ingredients, setIngredients] = useState([])
   const [newIngredients, setNewIngredients] = useState("")
 
@@ -29,8 +98,10 @@ export function NewDish() {
     setNewIngredients("")
   }
 
-  function handleRemoveIngredient(deleted){
-    setIngredients(prevState => prevState.filter(ingredient => ingredient !== deleted))
+  function handleRemoveIngredient(deleted) {
+    setIngredients((prevState) =>
+      prevState.filter((ingredient) => ingredient !== deleted)
+    )
   }
 
   const navigate = useNavigate()
@@ -55,20 +126,35 @@ export function NewDish() {
             <ImgUpload className="image">
               <label htmlFor="image">
                 <PiUploadSimpleLight size={24} />
-                <span>Selecione uma imagem</span>
+                <span>{fileName || "Selecione imagem"}</span>
               </label>
-              <input className="upload" type="file" id="image" />
+              <input
+                onChange={handleImageUpload}
+                className="upload"
+                type="file"
+                id="image"
+              />
             </ImgUpload>
           </Section>
           <Section text="Nome">
-            <Input placeholder="Ex.: Salada Ceasar" background="dark_800" />
+            <Input
+              placeholder="Ex.: Salada Ceasar"
+              background="dark_800"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
           </Section>
           <Section text="Categoria">
             <label className="category-label" htmlFor="category">
-              <select id="category">
-                <option value="">Refeição</option>
-                <option value="">Refeição2</option>
-                <option value="">Refeição3</option>
+              <select
+                id="category"
+                value={category}
+                onChange={(e) => setCategory(e.target.value)}
+              >
+                <option value="">Selecionar</option>
+                <option value="meal">Refeição</option>
+                <option value="dessert">Sobremesa</option>
+                <option value="drink">Bebidda</option>
               </select>
               <RiArrowDownSLine className="svgCategory" size={22} />
             </label>
@@ -96,7 +182,12 @@ export function NewDish() {
           <label className="grid-void-space"></label>
 
           <Section text="Preço">
-            <Input background="dark_800" placeholder="R$ 00,00" />
+            <Input
+              background="dark_800"
+              placeholder="R$ 00,00"
+              value={price}
+              onChange={(e) => setPrice(e.target.value)}
+            />
           </Section>
           <div className="text-section">
             <Section text="Descrição">
@@ -106,6 +197,7 @@ export function NewDish() {
                 id=""
                 cols="30"
                 rows="10"
+                onChange={(e) => setDescription(e.target.value)}
               ></textarea>
             </Section>
           </div>
@@ -114,7 +206,11 @@ export function NewDish() {
           <label className="grid-void-space"></label>
 
           <div className="btn">
-            <Button bgColor={theme.COLORS.RED_400} text="Salvar alterações" />
+            <Button
+              bgColor={theme.COLORS.RED_400}
+              text="Salvar alterações"
+              onClick={handleNewDish}
+            />
           </div>
         </Form>
       </main>
