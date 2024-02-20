@@ -133,6 +133,15 @@ export const Container = styled.div`
     p {
       font-size: 0.85rem;
     }
+
+    swiper-container {
+      height: 20rem;
+      width: 31rem;
+    }
+
+    swiper-slide {
+      max-width: 12.5rem;
+    }
   }
 
   @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
