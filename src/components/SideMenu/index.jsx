@@ -22,6 +22,10 @@ export function SideMenu({ setSearch, isAdmin, menuIsOpen, onCloseMenu }) {
     }
   }
 
+  function handleNewDishClick() {
+    navigate("/new")
+  }
+
   return (
     <Container data-menu-is-open={menuIsOpen}>
       <div className="menu-header">
@@ -37,7 +41,7 @@ export function SideMenu({ setSearch, isAdmin, menuIsOpen, onCloseMenu }) {
         />
         {isAdmin && (
           <div className="btn-border">
-            <ButtonText text="Novo Prato" />
+            <ButtonText text="Novo Prato" onClick={handleNewDishClick} />
           </div>
         )}
         <div className="btn-border">

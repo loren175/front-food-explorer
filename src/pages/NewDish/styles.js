@@ -7,6 +7,7 @@ export const Container = styled.div`
 
   h3 {
     font-size: 0.8125rem;
+    margin-top: 1rem;
   }
 
   main {
@@ -147,7 +148,7 @@ export const ImgUpload = styled.div`
   label {
     display: flex;
     align-items: center;
-    gap: 0.40rem;
+    gap: 0.4rem;
     font-size: 0.875rem;
     padding: 0.625rem 1.25rem;
     cursor: pointer;
