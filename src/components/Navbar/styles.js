@@ -23,7 +23,7 @@ export const Container = styled.header`
 
   .counter {
     position: absolute;
-    top: 50px;
+    top: 38px;
     right: 10px;
     background-color: ${({ theme }) => theme.COLORS.RED_200};
     color: ${({ theme }) => theme.COLORS.LIGHT_100};

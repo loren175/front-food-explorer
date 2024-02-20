@@ -166,10 +166,16 @@ export function EditDish({ isAdmin }) {
     navigate(-1)
   }
 
+  const [menuIsOpen, setMenuIsOpen] = useState(false)
+
   return (
     <Container>
-      <SideMenu isAdmin={isAdmin} />
-      <Navbar isAdmin={isAdmin} />
+      <SideMenu
+        menuIsOpen={menuIsOpen}
+        isAdmin={isAdmin}
+        onCloseMenu={() => setMenuIsOpen(false)}
+      />
+      <Navbar onOpenMenu={() => setMenuIsOpen(true)} isAdmin={isAdmin} />
       <main>
         <Form>
           <div className="back-btn">

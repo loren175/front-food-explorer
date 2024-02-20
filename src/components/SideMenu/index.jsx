@@ -2,12 +2,29 @@ import { Container } from "./styles"
 import { Input } from "../Input"
 import { PiX } from "react-icons/pi"
 import { ButtonText } from "../ButtonText"
+import { useAuth } from "../../hooks/auth"
+import { useNavigate } from "react-router-dom"
 
-export function SideMenu({ setSearch, isAdmin }) {
+export function SideMenu({ setSearch, isAdmin, menuIsOpen, onCloseMenu }) {
+
+   const { signOut } = useAuth()
+
+   const navigate = useNavigate()
+
+   function handleSignOutClick() {
+     const confirmLogout = confirm("Deseja mesmo sair?")
+     if (confirmLogout) {
+       navigate("/")
+       signOut()
+     } else {
+       return
+     }
+   }
+
   return (
-    <Container>
+    <Container data-menu-is-open={menuIsOpen}>
       <div className="menu-header">
-        <PiX className="close-btn" />
+        <PiX className="close-btn" onClick={onCloseMenu} />
         <h4>Menu</h4>
       </div>
       <div className="menu-content">
@@ -23,7 +40,7 @@ export function SideMenu({ setSearch, isAdmin }) {
           </div>
         )}
         <div className="btn-border">
-          <ButtonText text="Sair" />
+          <ButtonText onClick={handleSignOutClick} text="Sair" />
         </div>
       </div>
     </Container>

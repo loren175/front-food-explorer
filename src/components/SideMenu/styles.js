@@ -1,10 +1,10 @@
 import styled from "styled-components"
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints"
 
 export const Container = styled.aside`
   height: 100vh;
   width: 100%;
-  display: none;
-  opacity: 0;
+
 
   .menu-header {
     display: flex;
@@ -13,7 +13,6 @@ export const Container = styled.aside`
     background-color: ${({ theme }) => theme.COLORS.DARK_700};
     width: 100%;
     height: 7.125rem;
-    margin-bottom: 2.18rem;
     padding: 1.56rem;
   }
   .close-btn {
@@ -23,11 +22,12 @@ export const Container = styled.aside`
   }
 
   .menu-content {
-    margin: 1.56rem;
+    padding: 1.56rem;
+    background-color: ${({ theme }) => theme.COLORS.DARK_400};
   }
 
   .menu-search {
-    font-size: 0.80rem;
+    font-size: 0.8rem;
     padding-bottom: 2px;
   }
 
@@ -48,5 +48,21 @@ export const Container = styled.aside`
     color: ${({ theme }) => theme.COLORS.LIGHT_300};
     display: block;
     margin: 0.625rem 0 0.625rem 0;
+  }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
+    position: absolute;
+    z-index: 1;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+
+    &[data-menu-is-open="true"] {
+      transform: translateX(0);
+    }
+  }
+
+  @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
+    display: none;
+    opacity: 0;
   }
 `

@@ -10,7 +10,8 @@ import { useNavigate } from "react-router-dom"
 import { useMediaQuery } from "react-responsive"
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints"
 
-export function Navbar({ setSearch, isAdmin }) {
+
+export function Navbar({ setSearch, isAdmin, onOpenMenu }) {
   const isDesktop = useMediaQuery({ minWidth: DEVICE_BREAKPOINTS.LG })
 
   const { signOut } = useAuth()
@@ -37,7 +38,7 @@ export function Navbar({ setSearch, isAdmin }) {
 
   return (
     <Container>
-      {!isDesktop && <PiList size={24} />}
+      {!isDesktop && <PiList size={24} onClick={onOpenMenu} />}
 
       <Brand onClick={handleHomeClick}>
         <svg

@@ -45,10 +45,16 @@ export function Home({ isAdmin }) {
     fetchDishes()
   }, [search])
 
+  const [menuIsOpen, setMenuIsOpen] = useState(false)
+
   return (
     <Container>
-      <SideMenu isAdmin={isAdmin} />
-      <Navbar isAdmin={isAdmin} setSearch={setSearch} />
+      <SideMenu menuIsOpen={menuIsOpen} isAdmin={isAdmin} onCloseMenu={() => setMenuIsOpen(false)} />
+      <Navbar
+        onOpenMenu={() => setMenuIsOpen(true)}
+        isAdmin={isAdmin}
+        setSearch={setSearch}
+      />
       <main>
         <div>
           <header className="banner">
