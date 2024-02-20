@@ -1,7 +1,6 @@
 import styled from "styled-components"
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints"
 
-
 export const Container = styled.div`
   width: 100%;
   min-height: 100vh;
@@ -96,13 +95,17 @@ export const Form = styled.form`
     }
   }
 
+  .grid-void-space {
+    z-index: -1;
+  }
+
   @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
     height: 100vh;
     display: grid;
     grid-template-columns: repeat(3, 18.75rem);
-    grid-template-rows: 3.125rem 4.375rem 4.375rem 5rem 12.5rem;
+    grid-template-rows: 3.125rem 4.375rem 4.375rem auto 12.5rem;
     margin: 1.25rem;
-    gap: 1.375rem;
+    gap: 2.625rem;
 
     .back-btn {
       > button {
@@ -126,7 +129,6 @@ export const Form = styled.form`
       width: 39.375rem;
       justify-content: normal;
     }
-
   }
 `
 
@@ -137,7 +139,7 @@ export const ImgUpload = styled.div`
   label {
     display: flex;
     align-items: center;
-    gap: 0.40rem;
+    gap: 0.4rem;
     font-size: 0.875rem;
     padding: 0.625rem 1.25rem;
     cursor: pointer;
