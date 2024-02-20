@@ -116,7 +116,7 @@ export const Container = styled.div`
       top: -33px;
       left: -22px;
       width: 12rem;
-      height: 11rem;
+      height: 10.2rem;
     }
 
     .banner-text {
