@@ -71,6 +71,70 @@ export const Container = styled.div`
     max-width: 12.5rem;
   }
 
+  @media (min-width: ${DEVICE_BREAKPOINTS.MOBILE_MD}) {
+    .banner {
+      width: 28rem;
+      height: 8.2rem;
+      margin-top: 2.68rem;
+      border-radius: 0.25rem;
+    }
+
+    .banner-img {
+      position: absolute;
+      top: -29px;
+      left: -22px;
+      width: 12rem;
+      height: 10.5rem;
+    }
+
+    .banner-text {
+      display: grid;
+      grid-template-columns: 6.25rem 15rem;
+      margin-left: 4rem;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      padding-top: 0.125rem;
+    }
+
+    p {
+      font-size: 0.85rem;
+    }
+  }
+
+  @media (min-width: ${DEVICE_BREAKPOINTS.MD}) {
+    .banner {
+      width: 29.75rem;
+      height: 8.225rem;
+      margin-top: 2.68rem;
+      border-radius: 0.25rem;
+    }
+
+    .banner-img {
+      position: absolute;
+      top: -33px;
+      left: -22px;
+      width: 12rem;
+      height: 11rem;
+    }
+
+    .banner-text {
+      display: grid;
+      grid-template-columns: 6.25rem 15rem;
+      margin-left: 4rem;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      padding-top: 0.125rem;
+    }
+
+    p {
+      font-size: 0.85rem;
+    }
+  }
+
   @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
     main {
       margin: 1.25rem;
@@ -144,69 +208,6 @@ export const Container = styled.div`
         transparent 0%,
         ${({ theme }) => theme.COLORS.GRADIENT_100} 100%
       );
-    }
-  }
-
-  @media (min-width: ${DEVICE_BREAKPOINTS.MD}) {
-    .banner {
-      width: 29.75rem;
-      height: 8.225rem;
-      margin-top: 2.68rem;
-      border-radius: 0.25rem;
-    }
-
-    .banner-img {
-      position: absolute;
-      top: -33px;
-      left: -22px;
-      width: 12rem;
-      height: 11rem;
-    }
-
-    .banner-text {
-      display: grid;
-      grid-template-columns: 6.25rem 15rem;
-      margin-left: 4rem;
-    }
-
-    h2 {
-      font-size: 1.4rem;
-      padding-top: 0.125rem;
-    }
-
-    p {
-      font-size: 0.85rem;
-    }
-  }
-  @media (min-width: ${DEVICE_BREAKPOINTS.MOBILE_MD}) {
-    .banner {
-      width: 28rem;
-      height: 8.2rem;
-      margin-top: 2.68rem;
-      border-radius: 0.25rem;
-    }
-
-    .banner-img {
-      position: absolute;
-      top: -29px;
-      left: -22px;
-      width: 12rem;
-      height: 10.5rem;
-    }
-
-    .banner-text {
-      display: grid;
-      grid-template-columns: 6.25rem 15rem;
-      margin-left: 4rem;
-    }
-
-    h2 {
-      font-size: 1.4rem;
-      padding-top: 0.125rem;
-    }
-
-    p {
-      font-size: 0.85rem;
     }
   }
 `
