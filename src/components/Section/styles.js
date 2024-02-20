@@ -2,9 +2,9 @@ import styled from "styled-components"
 
 export const Container = styled.section`
   display: flex;
-  gap: 10px;
+  gap: 0.625rem;
   flex-direction: column;
-  margin-bottom: 28px;
+  margin-bottom: 1.75rem;
 
   h3 {
     color: ${({ theme }) => theme.COLORS.LIGHT_300};

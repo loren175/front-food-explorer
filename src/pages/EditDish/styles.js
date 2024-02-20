@@ -7,55 +7,55 @@ export const Container = styled.div`
   min-height: 100vh;
 
   h3 {
-    font-size: 13px;
+    font-size: 0.8125rem;
   }
 
   main {
     display: flex;
     justify-content: center;
-    margin: 20px;
+    margin: 1.25rem;
   }
 `
 
 export const Form = styled.form`
   h2 {
-    margin: 10px 0px;
+    margin: 0.625rem 0px;
     font-family: "Poppins";
     font-weight: 300;
     color: ${({ theme }) => theme.COLORS.LIGHT_300};
-    font-size: 32px;
+    font-size: 2rem;
   }
 
   textarea {
     background-color: ${({ theme }) => theme.COLORS.DARK_800};
     color: ${({ theme }) => theme.COLORS.LIGHT_500};
     border: none;
-    border-radius: 4px;
+    border-radius: 0.25rem;
     font-family: "Roboto";
-    font-size: 14px;
+    font-size: 0.875rem;
     width: 100%;
-    height: 172px;
+    height: 10.75rem;
     outline: none;
-    padding: 10px 50px 10px 10px;
+    padding: 0.625rem 3.125rem 0.625rem 0.625rem;
   }
 
   .tags {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 6px;
-    padding: 6px;
+    gap: 0.375rem;
+    padding: 0.375rem;
     align-items: center;
     background-color: ${({ theme }) => theme.COLORS.DARK_800};
-    border-radius: 4px;
+    border-radius: 0.25rem;
     height: 100%;
   }
 
   .category-label {
     background-color: ${({ theme }) => theme.COLORS.DARK_900};
     width: 100%;
-    height: 48px;
-    border-radius: 4px;
+    height: 3rem;
+    border-radius: 0.25rem;
     display: flex;
     align-items: center;
 
@@ -69,9 +69,9 @@ export const Form = styled.form`
     color: ${({ theme }) => theme.COLORS.LIGHT_400};
     appearance: none;
     width: 100%;
-    padding: 16px;
+    padding: 1rem;
     font-family: "Roboto";
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 400;
   }
 
@@ -83,30 +83,30 @@ export const Form = styled.form`
     position: absolute;
     cursor: default;
     right: 0;
-    margin-right: 10px;
+    margin-right: 0.625rem;
   }
 
   .btns {
     display: flex;
-    gap: 25px;
+    gap: 1.56rem;
     width: 100%;
     button {
-      font-size: 13.4px;
-      width: 140px;
+      font-size: 0.83rem;
+      width: 8.75rem;
     }
   }
 
   @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
     height: 100vh;
     display: grid;
-    grid-template-columns: 300px 300px 300px;
-    grid-template-rows: 50px 70px 70px 80px 200px;
-    margin: 20px;
-    gap: 22px;
+    grid-template-columns: repeat(3, 18.75rem);
+    grid-template-rows: 3.125rem 4.375rem 4.375rem 5rem 12.5rem;
+    margin: 1.25rem;
+    gap: 1.375rem;
 
     .back-btn {
       > button {
-        font-size: 24px;
+        font-size: 1.5rem;
         font-weight: bold;
       }
     }
@@ -114,7 +114,7 @@ export const Form = styled.form`
     h2 {
       grid-column: 1 / -1;
       font-weight: 400;
-      height: 100px;
+      height: 6.25rem;
     }
 
     .text-section {
@@ -123,7 +123,7 @@ export const Form = styled.form`
 
     .tags {
       height: auto;
-      width: 630px;
+      width: 39.375rem;
       justify-content: normal;
     }
 
@@ -137,12 +137,12 @@ export const ImgUpload = styled.div`
   label {
     display: flex;
     align-items: center;
-    gap: 6.5px;
-    font-size: 14px;
-    padding: 10px 20px;
+    gap: 0.40rem;
+    font-size: 0.875rem;
+    padding: 0.625rem 1.25rem;
     cursor: pointer;
     background-color: ${({ theme }) => theme.COLORS.DARK_800};
-    border-radius: 4px;
+    border-radius: 0.25rem;
     width: 100%;
   }
 

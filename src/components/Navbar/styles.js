@@ -3,11 +3,11 @@ import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints"
 
 export const Container = styled.header`
   width: 100%;
-  height: 114px;
+  height: 7.125rem;
   display: flex;
   align-items: center;
   background-color: ${({ theme }) => theme.COLORS.DARK_700};
-  padding: 63px 17px 34px 17px;
+  padding: 3.93rem 1.06rem 2.125rem 1.06rem;
   justify-content: space-between;
   transition: all 0.3s;
 
@@ -27,10 +27,10 @@ export const Container = styled.header`
     right: 10px;
     background-color: ${({ theme }) => theme.COLORS.RED_200};
     color: ${({ theme }) => theme.COLORS.LIGHT_100};
-    font-size: 12px;
+    font-size: 0.75rem;
     border-radius: 50%;
-    width: 18px;
-    height: 18px;
+    width: 1.125rem;
+    height: 1.125rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -43,7 +43,7 @@ export const Container = styled.header`
       margin-bottom: 0;
     }
     button {
-      width: 216px;
+      width: 13.5rem;
     }
   }
 `
@@ -51,17 +51,17 @@ export const Container = styled.header`
 export const Brand = styled.div`
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 0.375rem;
   cursor: pointer;
 
   h1 {
-    font-size: 19px;
+    font-size: 1.18rem;
   }
 
   .admin-p {
     color: ${({ theme }) => theme.COLORS.BLUE_200};
-    font-size: 11.8px;
-    padding-right: 40px;
+    font-size: 0.73rem;
+    padding-right: 2.5rem;
     font-family: "Roboto";
     font-weight: 300;
   }

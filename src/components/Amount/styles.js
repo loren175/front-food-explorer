@@ -5,24 +5,24 @@ import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints"
 export const Container = styled.div`
   display: flex;
   align-items: center;
-  gap: 18px;
-  font-size: 18px;
+  gap: 1.125rem;
+  font-size: 1.125rem;
   color: ${({ theme }) => theme.COLORS.LIGHT_100};
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
   p {
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 300;
   }
 
   @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
     p {
-      font-size: 18px;
+      font-size: 1.125rem;
       font-weight: bold;
     }
 
     svg {
-      width: 24px;
-      height: 24px;
+      width: 1.5rem;
+      height: 1.5rem;
     }
   }
 `

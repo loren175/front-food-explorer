@@ -6,17 +6,17 @@ export const Container = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   border: none;
-  width: 316px;
-  height: 48px;
-  font-size: 14px;
+  width: 19.75rem;
+  height: 3rem;
+  font-size: 0.875rem;
   font-family: "Poppins";
   font-weight: 400;
 
   .paper-icon {
-    width: 19px;
-    height: 19px;
-    margin-right: 4px;
+    width: 1.18rem;
+    height: 1.18rem;
+    margin-right: 0.25rem;
   }
 `

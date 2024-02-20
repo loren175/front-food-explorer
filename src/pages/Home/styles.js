@@ -12,7 +12,7 @@ export const Container = styled.div`
   main {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 200px;
+    grid-template-rows: 12.5rem;
     justify-items: center;
   }
 
@@ -24,97 +24,97 @@ export const Container = styled.div`
       ${({ theme }) => theme.COLORS.GRADIENT_200} 100%
     );
     color: ${({ theme }) => theme.COLORS.LIGHT_300};
-    width: 284px;
-    height: 106px;
-    margin-top: 43px;
-    border-radius: 4px;
+    width: 17.75rem;
+    height: 6.625rem;
+    margin-top: 2.68rem;
+    border-radius: 0.25rem;
   }
 
   .banner-img {
     position: absolute;
     top: -22px;
     left: -22px;
-    width: 146px;
-    height: 128px;
+    width: 9.125rem;
+    height: 8rem;
   }
 
   .banner-text {
     display: grid;
-    grid-template-columns: 100px 160px;
+    grid-template-columns: 6.25rem 10rem;
     grid-template-rows: 1fr 1fr;
     grid-template-areas: "none header-text" "none header-description";
-    margin-left: 19px;
+    margin-left: 1.19rem;
   }
 
   h2 {
     grid-area: header-text;
     font-family: "Poppins";
-    font-size: 14.5px;
+    font-size: 0.90rem;
     font-weight: 500;
-    padding-top: 10px;
-    margin-top: 24px;
+    padding-top: 0.625rem;
+    margin-top: 1.5rem;
   }
 
   p {
     grid-area: header-description;
     font-family: "Poppins";
-    font-size: 9.6px;
+    font-size: 0.6rem;
     font-weight: 200;
   }
 
   swiper-container {
-    height: 292px;
-    width: 290px;
+    height: 18.25rem;
+    width: 18.125rem;
   }
 
   swiper-slide {
-    max-width: 200px;
+    max-width: 12.5rem;
   }
 
   @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
     main {
-      margin: 20px;
-      grid-template-rows: 420px;
+      margin: 1.25rem;
+      grid-template-rows: 26.25rem;
     }
 
     .banner {
-      margin-top: 130px;
-      width: 970px;
-      height: 230px;
+      margin-top: 8.125rem;
+      width: 60.625rem;
+      height: 14.38rem;
     }
 
     .banner-img {
-      width: 602px;
-      height: 376px;
+      width: 37.625rem;
+      height: 23.5rem;
       top: -146px;
       left: -50px;
     }
 
     .banner-text {
-      grid-template-columns: 300px 1fr;
-      margin-left: 220px;
+      grid-template-columns: 18.75rem 1fr;
+      margin-left: 13.75rem;
     }
 
     h2 {
-      font-size: 41px;
-      padding-top: 50px;
+      font-size: 2.56rem;
+      padding-top: 3.125rem;
     }
 
     p {
-      font-size: 14.7px;
+      font-size: 0.91rem;
     }
 
     h3 {
-      font-size: 28px;
+      font-size: 1.75rem;
     }
 
     swiper-container {
-      height: 450px;
-      width: 970px;
+      height: 28.125rem;
+      width: 60.625rem;
     }
 
     swiper-slide {
-      max-width: 320px;
+      max-width: 20rem;
     }
 
     swiper-container::before,

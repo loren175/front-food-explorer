@@ -7,58 +7,58 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   background-color: ${({ theme }) => theme.COLORS.DARK_200};
-  width: 200px;
-  height: 276px;
-  gap: 10px;
+  width: 12.5rem;
+  height: 17.25rem;
+  gap: 0.625rem;
   position: relative;
-  border-radius: 4px;
+  border-radius: 0.25rem;
   border: 2px solid ${({ theme }) => theme.COLORS.DARK_300};
 
   .card-icons {
     position: absolute;
     top: 10px;
     right: 10px;
-    width: 24px;
-    height: 24px;
+    width: 1.5rem;
+    height: 1.5rem;
   }
 
   img {
-    width: 95px;
-    height: 95px;
+    width: 5.93rem;
+    height: 5.93rem;
     cursor: pointer;
   }
 
   h4 {
     color: ${({ theme }) => theme.COLORS.LIGHT_300};
     font-family: "Poppins";
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 300;
     cursor: pointer;
   }
 
   h5 {
     color: ${({ theme }) => theme.COLORS.BLUE_200};
-    font-size: 15px;
+    font-size: 0.93rem;
     font-weight: 300;
   }
 
   @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
-    width: 290px;
-    height: 450px;
-    gap: 6px;
+    width: 18.125rem;
+    height: 28.125rem;
+    gap: 0.375rem;
 
     img {
-      width: 160px;
-      height: 160px;
+      width: 10rem;
+      height: 10rem;
     }
 
     h4 {
-      font-size: 23px;
+      font-size: 1.43rem;
       font-weight: 600;
     }
 
     .description {
-      margin: 10px;
+      margin: 0.625rem;
       text-align: center;
     }
 
@@ -72,23 +72,23 @@ export const Add = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-top: 5px;
+  margin-top: 0.312rem;
   button {
-    height: 32px;
-    width: 162px;
+    height: 2rem;
+    width: 10.125rem;
   }
 
   @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
     flex-direction: row;
-    gap: 15px;
+    gap: 0.93rem;
 
     div {
       margin-bottom: 0;
     }
 
     button {
-      width: 92px;
-      height: 46px;
+      width: 5.75rem;
+      height: 2.875rem;
     }
   }
 `

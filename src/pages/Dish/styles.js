@@ -10,23 +10,23 @@ export const Container = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 30px;
+    margin: 1.875rem;
   }
 
   .back-btn {
     display: flex;
     align-self: stretch;
-    margin-left: 50px;
+    margin-left: 3.125rem;
   }
 
   img {
-    width: 200px;
-    height: 200px;
-    margin-bottom: 15px;
+    width: 12.5rem;
+    height: 12.5rem;
+    margin-bottom: 1rem;
   }
 
   h3 {
-    font-size: 22px;
+    font-size: 1.375rem;
     color: ${({ theme }) => theme.COLORS.LIGHT_300};
     margin: auto;
   }
@@ -38,27 +38,27 @@ export const Container = styled.div`
   .tag-area {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 0.625rem;
     justify-content: center;
   }
 
   .order {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 0.625rem;
 
     > button {
-      width: 188px;
-      height: 38px;
-      font-size: 9.5px;
+      width: 11.75rem;
+      height: 2.375rem;
+      font-size: 0.59rem;
     }
   }
 
   @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
     main {
       display: grid;
-      grid-template-columns: 500px 500px;
-      grid-template-rows: 20px auto;
+      grid-template-columns: 31.25rem 31.25rem;
+      grid-template-rows: 1.25rem auto;
       grid-template-areas:
         "back back"
         "img texto"
@@ -72,7 +72,7 @@ export const Container = styled.div`
       display: block;
       grid-area: back;
       > button {
-        font-size: 22px;
+        font-size: 1.375rem;
         font-weight: bold;
       }
     }
@@ -80,31 +80,31 @@ export const Container = styled.div`
     section {
       align-items: flex-start;
       grid-area: texto;
-      margin-top: 100px;
+      margin-top: 6.25rem;
 
       h3 {
         margin-left: 0;
-        font-size: 38px;
+        font-size: 2.375rem;
       }
 
       p {
-        font-size: 20px;
+        font-size: 1.25rem;
       }
     }
 
     .order {
       grid-area: buttons;
-      margin-bottom: 660px;
+      margin-bottom: 41.25rem;
 
       > button {
-        font-size: 14px;
+        font-size: 0.875rem;
       }
     }
 
     img {
-      width: 390px;
-      height: 390px;
-      margin-bottom: 500px;
+      width: 24.375rem;
+      height: 24.375rem;
+      margin-bottom: 31.25rem;
       grid-area: img;
     }
   }

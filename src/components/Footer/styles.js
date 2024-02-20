@@ -7,22 +7,22 @@ export const Container = styled.footer`
   color: ${({ theme }) => theme.COLORS.LIGHT_200};
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0.625rem;
   justify-content: center;
-  height: 77px;
+  height: 4.81rem;
   width: 100%;
 
   span {
-    font-size: 12px;
+    font-size: 0.75rem;
   }
 
   @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
     justify-content: space-around;
-    gap: 150px;
+    gap: 9.37rem;
   }
   @media (max-width: ${DEVICE_BREAKPOINTS.SM}) {
     span {
-      font-size: 11px;
+      font-size: 0.68rem;
     }
   }
 `
@@ -30,11 +30,11 @@ export const Container = styled.footer`
 export const Brand = styled.div`
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 0.312rem;
   color: ${({ theme }) => theme.COLORS.LIGHT_700};
 
   h1 {
-    font-size: 15px;
+    font-size: 0.93rem;
   }
 
   svg:hover {
@@ -43,7 +43,7 @@ export const Brand = styled.div`
 
   @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
     h1 {
-      font-size: 22px;
+      font-size: 1.37rem;
     }
   }
 
@@ -51,12 +51,12 @@ export const Brand = styled.div`
     align-items: normal;
 
     h1 {
-      font-size: 14px;
+      font-size: 0.875rem;
     }
 
     svg {
-      width: 16px;
-      height: 16px;
+      width: 1rem;
+      height: 1rem;
     }
   }
 `

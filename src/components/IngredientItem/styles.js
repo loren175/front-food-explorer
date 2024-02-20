@@ -8,8 +8,8 @@ export const Container = styled.div`
   border: ${({ theme, isNew }) =>
     !isNew ? "none" : `1px dashed ${theme.COLORS.LIGHT_500}`};
   color: ${({ theme }) => theme.COLORS.LIGHT_100};
-  border-radius: 10px;
-  padding-right: 16px;
+  border-radius: 0.625rem;
+  padding-right: 1rem;
 
   button {
     border: none;
@@ -25,14 +25,14 @@ export const Container = styled.div`
   }
 
   svg {
-    font-size: 13px;
+    font-size: 0.812rem;
   }
 
   input {
-    height: 32px;
-    width: 96px;
-    padding: 12px;
-    font-size: 14px;
+    height: 2rem;
+    width: 6rem;
+    padding: 0.75rem;
+    font-size: 0.875rem;
 
     color: ${({ theme, isNew }) =>
       !isNew

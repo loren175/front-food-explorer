@@ -8,25 +8,25 @@ export const Container = styled.div`
   flex-direction: column;
   height: 87vh;
   width: 100%;
-  gap: 31px;
+  gap: 1.93rem;
 
   h3 {
     color: ${({ theme }) => theme.COLORS.LIGHT_400};
 
-    font-size: 13px;
+    font-size: 0.8125rem;
   }
 
   @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
     flex-direction: row;
     justify-content: space-between;
-    padding-inline: 150px;
+    padding-inline: 9.375rem;
   }
 `
 
 export const Brand = styled.div`
   display: flex;
   align-items: center;
-  gap: 11px;
+  gap: 0.687rem;
 
   @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
     width: 100%;
@@ -44,20 +44,20 @@ export const Form = styled.form`
   }
 
   button {
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
   }
 
   @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
     background-color: ${({ theme }) => theme.COLORS.DARK_700};
-    border-radius: 16px;
-    padding: 30px;
+    border-radius: 1rem;
+    padding: 1.875rem;
 
     h2 {
       display: initial;
-      margin: 20px 0 20px 0;
+      margin: 1.25rem 0 1.25rem 0;
       font-family: "Poppins";
       font-weight: 400;
-      font-size: 30px;
+      font-size: 1.875rem;
     }
   }
 `

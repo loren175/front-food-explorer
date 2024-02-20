@@ -4,9 +4,9 @@ export const Container = styled.span`
   background-color: ${({ theme }) => theme.COLORS.DARK_1000};
   color: ${({ theme }) => theme.COLORS.LIGHT_100};
   font-family: "Poppins";
-  font-size: 14px;
-  border-radius: 4px;
-  padding: 7px;
+  font-size: 0.875rem;
+  border-radius: 0.25;
+  padding: 0.43rem;
 
   &:hover {
     cursor: default;

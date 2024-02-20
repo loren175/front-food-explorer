@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components"
-import {DEVICE_BREAKPOINTS} from "./deviceBreakPoints"
+import { DEVICE_BREAKPOINTS } from "./deviceBreakPoints"
 
 export default createGlobalStyle`
   * {
