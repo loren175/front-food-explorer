@@ -17,7 +17,7 @@ import { useNavigate } from "react-router-dom"
 
 register()
 
-export function Home() {
+export function Home({ isAdmin }) {
   const isDesktop = useMediaQuery({ minWidth: DEVICE_BREAKPOINTS.LG })
 
   const navigate = useNavigate()
@@ -47,8 +47,8 @@ export function Home() {
 
   return (
     <Container>
-      <SideMenu />
-      <Navbar setSearch={setSearch} />
+      <SideMenu isAdmin={isAdmin} />
+      <Navbar isAdmin={isAdmin} setSearch={setSearch} />
       <main>
         <div>
           <header className="banner">
@@ -75,7 +75,11 @@ export function Home() {
             {dishes &&
               dishes.meals.map((dish) => (
                 <swiper-slide key={String(dish.id)}>
-                  <Card handleDishClick={handleDishClick} data={dish} />
+                  <Card
+                    isAdmin={isAdmin}
+                    handleDishClick={handleDishClick}
+                    data={dish}
+                  />
                 </swiper-slide>
               ))}
           </swiper-container>
@@ -91,7 +95,11 @@ export function Home() {
             {dishes &&
               dishes.desserts.map((dish) => (
                 <swiper-slide key={String(dish.id)}>
-                  <Card handleDishClick={handleDishClick} data={dish} />
+                  <Card
+                    isAdmin={isAdmin}
+                    handleDishClick={handleDishClick}
+                    data={dish}
+                  />
                 </swiper-slide>
               ))}
           </swiper-container>
@@ -107,7 +115,11 @@ export function Home() {
             {dishes &&
               dishes.drinks.map((dish) => (
                 <swiper-slide key={String(dish.id)}>
-                  <Card handleDishClick={handleDishClick} data={dish} />
+                  <Card
+                    isAdmin={isAdmin}
+                    handleDishClick={handleDishClick}
+                    data={dish}
+                  />
                 </swiper-slide>
               ))}
           </swiper-container>

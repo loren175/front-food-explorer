@@ -20,7 +20,7 @@ import { useState } from "react"
 
 import theme from "../../styles/theme"
 
-export function NewDish() {
+export function NewDish({ isAdmin }) {
   const isDesktop = useMediaQuery({ minWidth: DEVICE_BREAKPOINTS.LG })
 
   const [name, setName] = useState("")
@@ -38,35 +38,35 @@ export function NewDish() {
   }
 
   async function handleNewDish() {
-     if (!image) {
-       return alert("Selecione a imagem do prato.")
-     }
+    if (!image) {
+      return alert("Selecione a imagem do prato.")
+    }
 
-     if (!name) {
-       return alert("Digite o nome do prato.")
-     }
+    if (!name) {
+      return alert("Digite o nome do prato.")
+    }
 
-     if (!category) {
-       return alert("Selecione a categoria do prato.")
-     }
+    if (!category) {
+      return alert("Selecione a categoria do prato.")
+    }
 
-     if (ingredients.length === 0) {
-       return alert("Informe pelo menos um ingrediente do prato.")
-     }
+    if (ingredients.length === 0) {
+      return alert("Informe pelo menos um ingrediente do prato.")
+    }
 
-     if (newIngredients) {
-       return alert(
-         "Você deixou um ingrediente no campo para adicionar, mas não clicou em adicionar. Clique para adicionar ou deixe o campo vazio."
-       )
-     }
+    if (newIngredients) {
+      return alert(
+        "Você deixou um ingrediente no campo para adicionar, mas não clicou em adicionar. Clique para adicionar ou deixe o campo vazio."
+      )
+    }
 
-     if (!price) {
-       return alert("Digite o preço do prato.")
-     }
+    if (!price) {
+      return alert("Digite o preço do prato.")
+    }
 
-     if (!description) {
-       return alert("Digite a descrição do prato.")
-     }
+    if (!description) {
+      return alert("Digite a descrição do prato.")
+    }
 
     const formData = new FormData()
     formData.append("image", image)
@@ -112,8 +112,8 @@ export function NewDish() {
 
   return (
     <Container>
-      <SideMenu />
-      <Navbar />
+      <SideMenu isAdmin={isAdmin} />
+      <Navbar isAdmin={isAdmin} />
       <main>
         <Form>
           <div className="back-btn">

@@ -45,8 +45,8 @@ export function Dish({ isAdmin }) {
 
   return (
     <Container>
-      <Navbar />
-      <SideMenu />
+      <Navbar isAdmin={isAdmin} />
+      <SideMenu isAdmin={isAdmin} />
       {data && (
         <main>
           <div className="back-btn">

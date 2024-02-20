@@ -58,10 +58,12 @@ export const Brand = styled.div`
     font-size: 19px;
   }
 
-  p {
+  .admin-p {
     color: ${({ theme }) => theme.COLORS.BLUE_200};
     font-size: 11.8px;
     padding-right: 40px;
+    font-family: "Roboto";
+    font-weight: 300;
   }
 
   @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {

@@ -5,9 +5,11 @@ import { useAuth } from "../hooks/auth"
 
 export function Routes() {
   const { user } = useAuth()
+  const isAdmin = user ? user.is_admin : false
+
   return (
-  <BrowserRouter>
-    {user ? <AppRoutes /> : <AuthRoutes />}
-  </BrowserRouter>
+    <BrowserRouter>
+      {user ? <AppRoutes isAdmin={isAdmin} /> : <AuthRoutes />}
+    </BrowserRouter>
   )
 }

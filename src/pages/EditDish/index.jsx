@@ -19,7 +19,7 @@ import theme from "../../styles/theme"
 import { api } from "../../services/api"
 import { useEffect, useState } from "react"
 
-export function EditDish() {
+export function EditDish({ isAdmin }) {
   const isDesktop = useMediaQuery({ minWidth: DEVICE_BREAKPOINTS.LG })
 
   const [dish, setDish] = useState(null)
@@ -168,8 +168,8 @@ export function EditDish() {
 
   return (
     <Container>
-      <SideMenu />
-      <Navbar />
+      <SideMenu isAdmin={isAdmin} />
+      <Navbar isAdmin={isAdmin} />
       <main>
         <Form>
           <div className="back-btn">

@@ -53,7 +53,7 @@ export function Navbar({ setSearch, isAdmin }) {
           />
         </svg>
         <h1>food explorer</h1>
-        {isAdmin && <p>admin</p>}
+        {isAdmin && <p className="admin-p">admin</p>}
       </Brand>
 
       {isDesktop && (
@@ -66,7 +66,7 @@ export function Navbar({ setSearch, isAdmin }) {
         />
       )}
       {isDesktop &&
-        (!isAdmin ? (
+        (isAdmin ? (
           <Button
             onClick={() => handleNewDishClick()}
             hasIcon={false}

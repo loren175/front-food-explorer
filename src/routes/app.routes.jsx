@@ -4,13 +4,13 @@ import { Dish } from "../pages/Dish/index.jsx"
 import { EditDish } from "../pages/EditDish/index.jsx"
 import { NewDish } from "../pages/NewDish/index.jsx"
 
-export function AppRoutes() {
+export function AppRoutes({ isAdmin }) {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/dish/:id" element={<Dish />} />
-      <Route path="/edit/:id" element={<EditDish />} />
-      <Route path="/new" element={<NewDish />} />
+      <Route path="/" element={<Home isAdmin={isAdmin} />} />
+      <Route path="/dish/:id" element={<Dish isAdmin={isAdmin} />} />
+      <Route path="/edit/:id" element={<EditDish isAdmin={isAdmin} />} />
+      <Route path="/new" element={<NewDish isAdmin={isAdmin} />} />
 
       <Route path="*" element={<Navigate to="/" />} />
     </Routes>
