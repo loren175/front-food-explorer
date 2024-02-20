@@ -54,11 +54,15 @@ export function Navbar({ setSearch, isAdmin, onOpenMenu }) {
           />
         </svg>
         <h1>food explorer</h1>
-        {isAdmin && <p className="admin-p">admin</p>}
+        {isAdmin ? (
+          <p className="admin-p">admin</p>
+        ) : (
+          <p className="admin-p"></p>
+        )}
       </Brand>
 
-      {!isDesktop ? (
-        isAdmin && (
+      {!isAdmin ? (
+        isDesktop && (
           <>
             <label className="flex-space-between" htmlFor=""></label>
           </>
@@ -88,7 +92,7 @@ export function Navbar({ setSearch, isAdmin, onOpenMenu }) {
           <Button
             hasIcon={true}
             bgColor={theme.COLORS.RED_200}
-            text="Pedidos (0)"
+            text="Pedidos (2)"
           />
         ))}
 
@@ -96,7 +100,7 @@ export function Navbar({ setSearch, isAdmin, onOpenMenu }) {
         !isAdmin && (
           <>
             <PiNewspaperClipping className="order-svg" size={24} />
-            <div className="counter">0</div>
+            <div className="counter">2</div>
           </>
         )
       ) : (
