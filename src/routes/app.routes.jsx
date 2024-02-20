@@ -9,8 +9,16 @@ export function AppRoutes({ isAdmin }) {
     <Routes>
       <Route path="/" element={<Home isAdmin={isAdmin} />} />
       <Route path="/dish/:id" element={<Dish isAdmin={isAdmin} />} />
-      <Route path="/edit/:id" element={<EditDish isAdmin={isAdmin} />} />
-      <Route path="/new" element={<NewDish isAdmin={isAdmin} />} />
+      {isAdmin ? (
+        <Route path="/new" element={<NewDish isAdmin={isAdmin} />} />
+      ) : (
+        <Route path="/new" element={<Navigate to="/" replace />} />
+      )}
+      {isAdmin ? (
+        <Route path="/edit/:id" element={<EditDish isAdmin={isAdmin} />} />
+      ) : (
+        <Route path="/edit/:id" element={<Navigate to="/" replace />} />
+      )}
 
       <Route path="*" element={<Navigate to="/" />} />
     </Routes>
