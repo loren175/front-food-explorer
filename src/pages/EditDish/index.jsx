@@ -141,6 +141,12 @@ export function EditDish({ isAdmin }) {
     }
   }
 
+  function handleKeyDown(event) {
+    if (event.key === "Enter") {
+      handleEditDish()
+    }
+  }
+
   useEffect(() => {
     async function fetchDish() {
       try {
@@ -178,7 +184,7 @@ export function EditDish({ isAdmin }) {
       />
       <Navbar onOpenMenu={() => setMenuIsOpen(true)} isAdmin={isAdmin} />
       <main>
-        <Form>
+        <Form onKeyDown={handleKeyDown}>
           <div className="back-btn">
             <ButtonText onClick={() => handleBackClick()} text="< voltar" />
           </div>

@@ -111,6 +111,13 @@ export function NewDish({ isAdmin }) {
     )
   }
 
+  function handleKeyDown(event) {
+    if (event.key === "Enter") {
+      handleNewDish()
+    }
+  }
+
+
   return (
     <Container>
       <SideMenu
@@ -120,7 +127,7 @@ export function NewDish({ isAdmin }) {
       />
       <Navbar onOpenMenu={() => setMenuIsOpen(true)} isAdmin={isAdmin} />
       <main>
-        <Form>
+        <Form onKeyDown={handleKeyDown}>
           <div className="back-btn">
             <ButtonText onClick={() => handleBackClick()} text="< voltar" />
           </div>

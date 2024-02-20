@@ -28,6 +28,12 @@ export function SignIn() {
     signIn({ email, password })
   }
 
+  function handleKeyDown(event) {
+    if (event.key === "Enter") {
+      handleSignInClick()
+    }
+  }
+
   return (
     <Container>
       <Brand>
@@ -45,7 +51,7 @@ export function SignIn() {
         </svg>
         <h1>food explorer</h1>
       </Brand>
-      <Form>
+      <Form onKeyDown={handleKeyDown}>
         <h2>Faça login</h2>
         <Section text="Email">
           <Input
