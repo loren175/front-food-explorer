@@ -15,7 +15,7 @@ export function Navbar({ setSearch, isAdmin, onOpenMenu }) {
   const isDesktop = useMediaQuery({ minWidth: DEVICE_BREAKPOINTS.LG })
 
   const navigate = useNavigate()
-  
+
   const { signOut } = useAuth()
 
   function handleNewDishClick() {
@@ -57,12 +57,22 @@ export function Navbar({ setSearch, isAdmin, onOpenMenu }) {
         {isAdmin && <p className="admin-p">admin</p>}
       </Brand>
 
+      {!isDesktop ? (
+        isAdmin && (
+          <>
+            <label className="flex-space-between" htmlFor=""></label>
+          </>
+        )
+      ) : (
+        <label className="flex-space-between" htmlFor=""></label>
+      )}
+
       {isDesktop && (
         <Input
           widthStyle="480px"
           hasIcon={true}
           placeholder="Busque por pratos ou ingredientes"
-          setSearch={setSearch}
+          $setsearch={setSearch}
           onChange={(e) => setSearch(e.target.value)}
         />
       )}

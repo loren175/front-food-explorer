@@ -32,7 +32,7 @@ export function SideMenu({ setSearch, isAdmin, menuIsOpen, onCloseMenu }) {
         <Input
           className="menu-search"
           hasIcon={true}
-          setSearch={setSearch}
+          $setsearch={setSearch}
           placeholder="Busque por pratos ou ingredientes"
         />
         {isAdmin && (

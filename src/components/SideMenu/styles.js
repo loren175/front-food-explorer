@@ -4,7 +4,8 @@ import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints"
 export const Container = styled.aside`
   height: 100vh;
   width: 100%;
-
+  display: none;
+  opacity: 0;
 
   .menu-header {
     display: flex;
@@ -50,19 +51,16 @@ export const Container = styled.aside`
     margin: 0.625rem 0 0.625rem 0;
   }
 
-  @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
+  @media (max-width: ${DEVICE_BREAKPOINTS.LG}) {
     position: absolute;
     z-index: 1;
     transform: translateX(-100%);
     transition: transform 0.3s ease-in-out;
+    opacity: 1;
+    display: block;
 
     &[data-menu-is-open="true"] {
       transform: translateX(0);
     }
-  }
-
-  @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
-    display: none;
-    opacity: 0;
   }
 `
