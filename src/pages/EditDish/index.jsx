@@ -1,4 +1,5 @@
 import { Container, Form, ImgUpload } from "./styles"
+
 import { Navbar } from "../../components/Navbar"
 import { Footer } from "../../components/Footer"
 import { SideMenu } from "../../components/SideMenu"
@@ -6,62 +7,42 @@ import { ButtonText } from "../../components/ButtonText"
 import { Input } from "../../components/Input"
 import { Button } from "../../components/Button"
 import { Section } from "../../components/Section"
+
 import { PiUploadSimpleLight } from "react-icons/pi"
 import { RiArrowDownSLine } from "react-icons/ri"
 import { IngredientItem } from "../../components/IngredientItem"
 
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints"
-
 import { useMediaQuery } from "react-responsive"
-import { useNavigate, useParams } from "react-router-dom"
-
 import theme from "../../styles/theme"
+
 import { api } from "../../services/api"
+
+import { useNavigate, useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 
 export function EditDish({ isAdmin }) {
   const isDesktop = useMediaQuery({ minWidth: DEVICE_BREAKPOINTS.LG })
 
-  const [dish, setDish] = useState(null)
-  const [updatedImage, setUpdatedImage] = useState(null)
+  const navigate = useNavigate()
+
   const params = useParams()
 
   const [name, setName] = useState("")
   const [description, setDescription] = useState("")
   const [price, setPrice] = useState("")
+  const [dish, setDish] = useState(null)
+  const [updatedImage, setUpdatedImage] = useState(null)
   const [category, setCategory] = useState("")
   const [image, setImage] = useState(null)
   const [fileName, setFileName] = useState("")
   const [ingredients, setIngredients] = useState([])
   const [newIngredients, setNewIngredients] = useState("")
+  const [menuIsOpen, setMenuIsOpen] = useState(false)
 
-  useEffect(() => {
-    async function fetchDish() {
-      try {
-        const response = await api.get(`/dish/${params.id}`)
-        setDish(response.data)
-      } catch (error) {
-        console.error(error)
-      }
-    }
-    fetchDish()
-  }, [params.id])
-
-  useEffect(() => {
-    if (dish) {
-      setFileName(dish.image)
-      setImage(dish.image)
-      setName(dish.name)
-      setCategory(dish.category)
-      setPrice(dish.price)
-      setDescription(dish.description)
-
-      const allIngredients = dish.ingredients.map(
-        (ingredient) => ingredient.name
-      )
-      setIngredients(allIngredients)
-    }
-  }, [dish])
+  function handleBackClick() {
+    navigate(-1)
+  }
 
   function handleImageChange(e) {
     const file = e.target.files[0]
@@ -160,13 +141,33 @@ export function EditDish({ isAdmin }) {
     }
   }
 
-  const navigate = useNavigate()
+  useEffect(() => {
+    async function fetchDish() {
+      try {
+        const response = await api.get(`/dish/${params.id}`)
+        setDish(response.data)
+      } catch (error) {
+        console.error(error)
+      }
+    }
+    fetchDish()
+  }, [params.id])
 
-  function handleBackClick() {
-    navigate(-1)
-  }
+  useEffect(() => {
+    if (dish) {
+      setFileName(dish.image)
+      setImage(dish.image)
+      setName(dish.name)
+      setCategory(dish.category)
+      setPrice(dish.price)
+      setDescription(dish.description)
 
-  const [menuIsOpen, setMenuIsOpen] = useState(false)
+      const allIngredients = dish.ingredients.map(
+        (ingredient) => ingredient.name
+      )
+      setIngredients(allIngredients)
+    }
+  }, [dish])
 
   return (
     <Container>

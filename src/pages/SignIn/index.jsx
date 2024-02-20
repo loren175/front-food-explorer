@@ -1,23 +1,24 @@
 import { Container, Brand, Form } from "./styles"
+
 import { Input } from "../../components/Input"
 import { Button } from "../../components/Button"
 import { ButtonText } from "../../components/ButtonText"
 import { Section } from "../../components/Section"
+
+import theme from "../../styles/theme"
 
 import { useAuth } from "../../hooks/auth"
 
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
-import theme from "../../styles/theme"
-
 export function SignIn() {
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-
   const { signIn } = useAuth()
 
   const navigate = useNavigate()
+
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
 
   function handleRegisterClick() {
     navigate("/register")

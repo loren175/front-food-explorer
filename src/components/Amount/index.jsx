@@ -1,8 +1,8 @@
 import { Container } from "./styles"
 
-import { useState } from "react"
-
 import { PiPlus, PiMinus } from "react-icons/pi"
+
+import { useState } from "react"
 
 export function Amount() {
  const [counter, setCounter] = useState(1);

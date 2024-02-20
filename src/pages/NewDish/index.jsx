@@ -1,4 +1,5 @@
 import { Container, Form, ImgUpload } from "./styles"
+
 import { Navbar } from "../../components/Navbar"
 import { Footer } from "../../components/Footer"
 import { SideMenu } from "../../components/SideMenu"
@@ -6,15 +7,16 @@ import { ButtonText } from "../../components/ButtonText"
 import { Input } from "../../components/Input"
 import { Button } from "../../components/Button"
 import { Section } from "../../components/Section"
+import { IngredientItem } from "../../components/IngredientItem"
+
 import { PiUploadSimpleLight } from "react-icons/pi"
 import { RiArrowDownSLine } from "react-icons/ri"
-import { IngredientItem } from "../../components/IngredientItem"
+
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints"
+import { useMediaQuery } from "react-responsive"
 
 import { api } from "../../services/api"
 
-import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints"
-
-import { useMediaQuery } from "react-responsive"
 import { useNavigate } from "react-router-dom"
 import { useState } from "react"
 
@@ -23,13 +25,21 @@ import theme from "../../styles/theme"
 export function NewDish({ isAdmin }) {
   const isDesktop = useMediaQuery({ minWidth: DEVICE_BREAKPOINTS.LG })
 
+  const navigate = useNavigate()
+
   const [name, setName] = useState("")
   const [description, setDescription] = useState("")
   const [price, setPrice] = useState("")
   const [category, setCategory] = useState("")
-
+  const [menuIsOpen, setMenuIsOpen] = useState(false)
   const [image, setImage] = useState(null)
   const [fileName, setFileName] = useState("")
+  const [ingredients, setIngredients] = useState([])
+  const [newIngredients, setNewIngredients] = useState("")
+
+  function handleBackClick() {
+    navigate(-1)
+  }
 
   function handleImageUpload(e) {
     const file = e.target.files[0]
@@ -90,9 +100,6 @@ export function NewDish({ isAdmin }) {
     }
   }
 
-  const [ingredients, setIngredients] = useState([])
-  const [newIngredients, setNewIngredients] = useState("")
-
   function handleAddIngredient() {
     setIngredients((prevState) => [...prevState, newIngredients])
     setNewIngredients("")
@@ -103,14 +110,6 @@ export function NewDish({ isAdmin }) {
       prevState.filter((ingredient) => ingredient !== deleted)
     )
   }
-
-  const navigate = useNavigate()
-
-  function handleBackClick() {
-    navigate(-1)
-  }
-
-  const [menuIsOpen, setMenuIsOpen] = useState(false)
 
   return (
     <Container>

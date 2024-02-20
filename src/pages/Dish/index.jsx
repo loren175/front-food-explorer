@@ -1,4 +1,5 @@
 import { Container } from "./styles"
+
 import { Navbar } from "../../components/Navbar"
 import { Footer } from "../../components/Footer"
 import { SideMenu } from "../../components/SideMenu"
@@ -9,31 +10,23 @@ import { Tag } from "../../components/Tag"
 import { Section } from "../../components/Section"
 
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints"
+import theme from "../../styles/theme"
+
+import { api } from "../../services/api"
 
 import { useMediaQuery } from "react-responsive"
 import { useNavigate, useParams } from "react-router-dom"
-
-import theme from "../../styles/theme"
 import { useEffect, useState } from "react"
-import { api } from "../../services/api"
 
 export function Dish({ isAdmin }) {
   const isDesktop = useMediaQuery({ minWidth: DEVICE_BREAKPOINTS.LG })
 
+  const navigate = useNavigate()
   const params = useParams()
+
   const [data, setData] = useState(null)
   const [number, setNumber] = useState(1)
-
-  useEffect(() => {
-    async function fetchDish() {
-      const response = await api.get(`/dish/${params.id}`)
-      setData(response.data)
-    }
-
-    fetchDish()
-  }, [])
-
-  const navigate = useNavigate()
+  const [menuIsOpen, setMenuIsOpen] = useState(false)
 
   function handleEditClick() {
     navigate(`/edit/${params.id}`)
@@ -43,7 +36,14 @@ export function Dish({ isAdmin }) {
     navigate(-1)
   }
 
-   const [menuIsOpen, setMenuIsOpen] = useState(false)
+  useEffect(() => {
+    async function fetchDish() {
+      const response = await api.get(`/dish/${params.id}`)
+      setData(response.data)
+    }
+
+    fetchDish()
+  }, [])
 
   return (
     <Container>

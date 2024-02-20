@@ -1,28 +1,35 @@
 import { Container, Brand, Form } from "./styles"
+
 import { Input } from "../../components/Input"
 import { Button } from "../../components/Button"
 import { ButtonText } from "../../components/ButtonText"
 import { Section } from "../../components/Section"
-import { useNavigate } from "react-router-dom"
-import { useState } from "react"
-
-import { api } from "../../services/api"
 
 import theme from "../../styles/theme"
 
+import { api } from "../../services/api"
+
+import { useNavigate } from "react-router-dom"
+import { useState } from "react"
+
 export function SignUp() {
+  const navigate = useNavigate()
+
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
-  const navigate = useNavigate()
+  function handleBackToLoginClick() {
+    navigate("/")
+  }
 
   function handleSignUpClick() {
     if (!name || !email || !password) {
       return alert("Preencha todos os campos!")
     }
 
-    api.post("/users", { name, email, password })
+    api
+      .post("/users", { name, email, password })
       .then(() => {
         alert("Usuário cadastrado.")
         navigate("/")
@@ -34,10 +41,6 @@ export function SignUp() {
           alert("Não foi possível realizar o cadastro.")
         }
       })
-  }
-
-  function handleBackToLoginClick() {
-    navigate("/")
   }
 
   return (

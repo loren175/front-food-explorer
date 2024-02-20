@@ -1,22 +1,30 @@
 import { Container, Brand } from "./styles"
-import { useAuth } from "../../hooks/auth"
-
 import { Input } from "../Input"
 import { Button } from "../Button"
-import theme from "../../styles/theme"
 
 import { PiList, PiNewspaperClipping, PiSignOut } from "react-icons/pi"
-import { useNavigate } from "react-router-dom"
-import { useMediaQuery } from "react-responsive"
+
+import theme from "../../styles/theme"
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints"
 
+import { useAuth } from "../../hooks/auth"
+import { useNavigate } from "react-router-dom"
+import { useMediaQuery } from "react-responsive"
 
 export function Navbar({ setSearch, isAdmin, onOpenMenu }) {
   const isDesktop = useMediaQuery({ minWidth: DEVICE_BREAKPOINTS.LG })
 
+  const navigate = useNavigate()
+  
   const { signOut } = useAuth()
 
-  const navigate = useNavigate()
+  function handleNewDishClick() {
+    navigate("/new")
+  }
+
+  function handleHomeClick() {
+    navigate("/")
+  }
 
   function handleSignOutClick() {
     const confirmLogout = confirm("Deseja mesmo sair?")
@@ -26,14 +34,6 @@ export function Navbar({ setSearch, isAdmin, onOpenMenu }) {
     } else {
       return
     }
-  }
-
-  function handleNewDishClick() {
-    navigate("/new")
-  }
-
-  function handleHomeClick() {
-    navigate("/")
   }
 
   return (

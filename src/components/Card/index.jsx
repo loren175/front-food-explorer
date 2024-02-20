@@ -1,15 +1,18 @@
 import { Container, Add } from "./styles"
-import { PiHeart, PiPencilSimple } from "react-icons/pi"
-import food1 from "../../assets/food1.png"
+
 import { Button } from "../Button"
 import { Amount } from "../Amount"
-import { api } from "../../services/api"
+
+import { PiHeart, PiPencilSimple } from "react-icons/pi"
+
+import theme from "../../styles/theme"
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints"
+
+import { api } from "../../services/api"
 
 import { useMediaQuery } from "react-responsive"
 import { useNavigate } from "react-router-dom"
 
-import theme from "../../styles/theme"
 
 export function Card({ handleDishClick, data, isAdmin, ...rest }) {
   const isDesktop = useMediaQuery({ minWidth: DEVICE_BREAKPOINTS.LG })

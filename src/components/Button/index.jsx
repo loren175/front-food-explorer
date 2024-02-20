@@ -1,4 +1,5 @@
 import { Container } from "./styles"
+
 import { PiNewspaperClipping } from "react-icons/pi"
 
 export function Button({ text, hasIcon, bgColor, onClick }) {

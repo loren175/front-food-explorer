@@ -1,4 +1,5 @@
 import { Container } from "./styles"
+
 import { Navbar } from "../../components/Navbar"
 import { Footer } from "../../components/Footer"
 import { SideMenu } from "../../components/SideMenu"
@@ -8,11 +9,13 @@ import homeImg from "../../assets/home-img.png"
 import homeImgDesk from "../../assets/home-img-desk.png"
 
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints"
-
 import { useMediaQuery } from "react-responsive"
+
 import { register } from "swiper/element/bundle"
-import { useEffect, useState } from "react"
+
 import { api } from "../../services/api"
+
+import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 register()
@@ -22,13 +25,15 @@ export function Home({ isAdmin }) {
 
   const navigate = useNavigate()
 
-  function handleDishClick(id) {
-    navigate(`/dish/${id}`)
-  }
-
   const [dishes, setDishes] = useState({ meals: [], desserts: [], drinks: [] })
 
   const [search, setSearch] = useState("")
+
+  const [menuIsOpen, setMenuIsOpen] = useState(false)
+
+  function handleDishClick(id) {
+    navigate(`/dish/${id}`)
+  }
 
   useEffect(() => {
     async function fetchDishes() {
@@ -45,11 +50,13 @@ export function Home({ isAdmin }) {
     fetchDishes()
   }, [search])
 
-  const [menuIsOpen, setMenuIsOpen] = useState(false)
-
   return (
     <Container>
-      <SideMenu menuIsOpen={menuIsOpen} isAdmin={isAdmin} onCloseMenu={() => setMenuIsOpen(false)} />
+      <SideMenu
+        menuIsOpen={menuIsOpen}
+        isAdmin={isAdmin}
+        onCloseMenu={() => setMenuIsOpen(false)}
+      />
       <Navbar
         onOpenMenu={() => setMenuIsOpen(true)}
         isAdmin={isAdmin}
