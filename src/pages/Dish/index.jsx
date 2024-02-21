@@ -25,7 +25,6 @@ export function Dish({ isAdmin }) {
   const params = useParams()
 
   const [data, setData] = useState(null)
-  const [number, setNumber] = useState(1)
   const [menuIsOpen, setMenuIsOpen] = useState(false)
 
   function handleEditClick() {
@@ -94,13 +93,13 @@ export function Dish({ isAdmin }) {
                 hasIcon={isDesktop ? false : true}
                 text={
                   isDesktop
-                    ? `incluir ∙ R$ ${(data.price * number).toLocaleString(
+                    ? `incluir ∙ R$ ${(data.price).toLocaleString(
                         "pt-BR",
                         {
                           minimumFractionDigits: 2,
                         }
                       )}`
-                    : `pedir ∙ R$ ${(data.price * number).toLocaleString(
+                    : `pedir ∙ R$ ${(data.price).toLocaleString(
                         "pt-BR",
                         {
                           minimumFractionDigits: 2,

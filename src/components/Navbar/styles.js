@@ -23,7 +23,7 @@ export const Container = styled.header`
 
   .counter {
     position: absolute;
-    top: 38px;
+    top: 50px;
     right: 10px;
     background-color: ${({ theme }) => theme.COLORS.RED_200};
     color: ${({ theme }) => theme.COLORS.LIGHT_100};
@@ -39,11 +39,19 @@ export const Container = styled.header`
 
   @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
     justify-content: space-evenly;
+
     div {
       margin-bottom: 0;
     }
     button {
       width: 13.5rem;
+    }
+  }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
+    .counter {
+      top: 38px;
+      right: 10px;
     }
   }
 `

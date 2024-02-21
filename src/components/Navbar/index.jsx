@@ -93,7 +93,7 @@ export function Navbar({ setSearch, isAdmin, onOpenMenu, isDisabled }) {
           <Button
             hasIcon={true}
             bgColor={theme.COLORS.RED_200}
-            text="Pedidos (2)"
+            text="Pedidos (0)"
           />
         ))}
 
@@ -101,7 +101,7 @@ export function Navbar({ setSearch, isAdmin, onOpenMenu, isDisabled }) {
         !isAdmin && (
           <>
             <PiNewspaperClipping className="order-svg" size={24} />
-            <div className="counter">2</div>
+            <div className="counter">0</div>
           </>
         )
       ) : (
