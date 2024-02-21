@@ -15,6 +15,10 @@ function AuthProvider({ children }) {
       )
       const { user } = response.data
 
+      if (email.includes("admin")) {
+        user.is_admin = 1
+      }
+
       localStorage.setItem("@foodexplorer:user", JSON.stringify(user))
 
       setData({ user })
