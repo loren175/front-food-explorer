@@ -38,6 +38,8 @@ O projeto Food explorer é um cardápio digital para uma empresa fictícia, send
 - **Mostrar detalhes do prato** (Dish)
 - **Editar prato** (EditDish)
 
+<img src="./public/github.png"></img>
+
 ## 🛠️ Funcionalidades
 
 - Login
@@ -80,7 +82,7 @@ $ npm run dev
 
 > > ❓ Tenha em mente que é necessário ter instalado em sua máquina o **NodeJS** e o **NPM** para utilizar este projeto localmente.
 
-> > ❗O back-end do projeto utiliza hospedagem gratuita com o Render, portanto o carregamento pode ser lento.
+> > ❗O back-end do projeto utiliza hospedagem gratuita com o **Render**, portanto o carregamento pode ser lento e alguns itens do banco de dados podem acabar não sendo salvos e renderizados. Mas **localmente** ele irá renderizar e salvar normalmente.
 
 ## 📞 Contato 
 
