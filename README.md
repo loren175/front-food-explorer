@@ -16,6 +16,8 @@
 
 O projeto Food explorer é um cardápio digital para uma empresa fictícia, sendo o desafio final da RocketSeat Explorer. Este é o front-end do projeto, possuindo uma interface responsiva e fluida.
 
+O back-end do projeto pode ser acessado por <a href="https://github.com/loren175/API-food-explorer">aqui</a>.
+
 ## ⚙️ Tecnologias
 
 - Javascript
