@@ -77,8 +77,7 @@ export function Navbar({ setSearch, isAdmin, onOpenMenu, isDisabled }) {
           hasIcon={true}
           placeholder="Busque por pratos ou ingredientes"
           isDisabled={isDisabled}
-          $setsearch={setSearch}
-          onChange={(e) => setSearch(e.target.value)}
+          setSearch={setSearch}
         />
       )}
       {isDesktop &&

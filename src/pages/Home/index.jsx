@@ -55,13 +55,13 @@ export function Home({ isAdmin }) {
       <SideMenu
         menuIsOpen={menuIsOpen}
         isAdmin={isAdmin}
-        $setsearch={setSearch}
+        setSearch={setSearch}
         onCloseMenu={() => setMenuIsOpen(false)}
       />
       <Navbar
         onOpenMenu={() => setMenuIsOpen(true)}
         isAdmin={isAdmin}
-        $setsearch={setSearch}
+        setSearch={setSearch}
       />
       <main>
         <div>
