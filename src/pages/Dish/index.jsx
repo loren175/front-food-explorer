@@ -49,10 +49,15 @@ export function Dish({ isAdmin }) {
     <Container>
       <SideMenu
         menuIsOpen={menuIsOpen}
+        isDisabled={true}
         isAdmin={isAdmin}
         onCloseMenu={() => setMenuIsOpen(false)}
       />
-      <Navbar onOpenMenu={() => setMenuIsOpen(true)} isAdmin={isAdmin} />
+      <Navbar
+        isDisabled={true}
+        onOpenMenu={() => setMenuIsOpen(true)}
+        isAdmin={isAdmin}
+      />
       {data && (
         <main>
           <div className="back-btn">

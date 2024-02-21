@@ -11,7 +11,7 @@ import { useAuth } from "../../hooks/auth"
 import { useNavigate } from "react-router-dom"
 import { useMediaQuery } from "react-responsive"
 
-export function Navbar({ setSearch, isAdmin, onOpenMenu }) {
+export function Navbar({ setSearch, isAdmin, onOpenMenu, isDisabled }) {
   const isDesktop = useMediaQuery({ minWidth: DEVICE_BREAKPOINTS.LG })
 
   const navigate = useNavigate()
@@ -76,6 +76,7 @@ export function Navbar({ setSearch, isAdmin, onOpenMenu }) {
           widthStyle="480px"
           hasIcon={true}
           placeholder="Busque por pratos ou ingredientes"
+          isDisabled={isDisabled}
           $setsearch={setSearch}
           onChange={(e) => setSearch(e.target.value)}
         />

@@ -7,7 +7,7 @@ import { PiX } from "react-icons/pi"
 import { useAuth } from "../../hooks/auth"
 import { useNavigate } from "react-router-dom"
 
-export function SideMenu({ setSearch, isAdmin, menuIsOpen, onCloseMenu }) {
+export function SideMenu({ setSearch, isAdmin, menuIsOpen, onCloseMenu, isDisabled }) {
   const navigate = useNavigate()
 
   const { signOut } = useAuth()
@@ -36,6 +36,7 @@ export function SideMenu({ setSearch, isAdmin, menuIsOpen, onCloseMenu }) {
         <Input
           className="menu-search"
           hasIcon={true}
+          isDisabled={isDisabled}
           $setsearch={setSearch}
           placeholder="Busque por pratos ou ingredientes"
         />

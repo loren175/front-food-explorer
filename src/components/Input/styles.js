@@ -24,4 +24,8 @@ export const Container = styled.div`
     font-size: 1.56rem;
     color: ${({ theme }) => theme.COLORS.LIGHT_400};
   }
+
+  &:disabled {
+    
+  }
 `
