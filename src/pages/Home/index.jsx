@@ -69,7 +69,7 @@ export function Home({ isAdmin }) {
             <img
               className="banner-img"
               src={isDesktop ? homeImgDesk : homeImg}
-              alt=""
+              alt="Macarons coloridos caindo com frutas silvestres e folhas."
             />
             <div className="banner-text">
               <h2>Sabores inigualáveis</h2>
