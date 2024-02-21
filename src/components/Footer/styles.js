@@ -50,6 +50,10 @@ export const Brand = styled.div`
     h1 {
       font-size: 1.37rem;
     }
+    svg {
+      width: 1.3rem;
+      height: 1.3rem;
+    }
   }
 
   @media (max-width: ${DEVICE_BREAKPOINTS.SM}) {
