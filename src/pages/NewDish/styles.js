@@ -5,6 +5,18 @@ export const Container = styled.div`
   width: 100%;
   min-height: 100vh;
 
+  header {
+    > div input {
+      opacity: 0.3;
+    }
+  }
+
+  aside {
+    > div input {
+      opacity: 0.3;
+    }
+  }
+
   h3 {
     font-size: 0.8125rem;
     margin-top: 1rem;
