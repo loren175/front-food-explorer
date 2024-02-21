@@ -37,6 +37,11 @@ export const Brand = styled.div`
     font-size: 0.93rem;
   }
 
+  svg {
+    width: 1rem;
+    height: 1rem;
+  }
+
   svg:hover {
     cursor: default;
   }
@@ -52,11 +57,6 @@ export const Brand = styled.div`
 
     h1 {
       font-size: 0.875rem;
-    }
-
-    svg {
-      width: 1rem;
-      height: 1rem;
     }
   }
 `

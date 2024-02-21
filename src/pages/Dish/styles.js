@@ -46,6 +46,7 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     gap: 0.625rem;
+    padding-bottom: 16rem;
 
     > button {
       width: 11.75rem;
