@@ -16,6 +16,8 @@
 
 O projeto Food explorer é um cardápio digital para uma empresa fictícia, sendo o desafio final da RocketSeat Explorer. Este é o front-end do projeto, possuindo uma interface responsiva e fluida.
 
+O back-end do projeto pode ser acessado por <a href="https://github.com/loren175/API-food-explorer">aqui</a>.
+
 ## ⚙️ Tecnologias
 
 - Javascript
@@ -54,7 +56,7 @@ O projeto Food explorer é um cardápio digital para uma empresa fictícia, send
 
 ## 💻 Instalação
 
-O projeto teve seu deploy feito utilizando o Netlify e está disponível <a href="https://food-explorer-loren175.netlify.app/">aqui</a>. Mas você pode realizar o clone do projeto e instalar ele seguindo estes passos:
+O projeto teve seu deploy feito utilizando o Netlify e está disponível <a href="https://food-explorer-loren175.netlify.app/" target="_blank">aqui</a>. Mas você pode realizar o clone do projeto e instalar ele seguindo estes passos:
 
 > **1. Clone o projeto:**
 
