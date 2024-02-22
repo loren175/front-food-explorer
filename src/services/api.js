@@ -5,4 +5,4 @@ export const api = axios.create({
   withCredentials: true,
 })
 
-// Para uso local mude para baseURL: "http://localhost:3333"
+// Para uso local mude para baseURL: "http://localhost:"
