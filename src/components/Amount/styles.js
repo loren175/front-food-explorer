@@ -6,9 +6,9 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   gap: 1.125rem;
+  margin-bottom: 0.625rem;
   font-size: 1.125rem;
   color: ${({ theme }) => theme.COLORS.LIGHT_100};
-  margin-bottom: 0.625rem;
   p {
     font-size: 1rem;
     font-weight: 300;

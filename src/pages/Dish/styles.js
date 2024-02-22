@@ -38,8 +38,8 @@ export const Container = styled.div`
   }
 
   h3 {
-    font-size: 1.375rem;
     color: ${({ theme }) => theme.COLORS.LIGHT_300};
+    font-size: 1.375rem;
     margin: auto;
   }
 
@@ -54,7 +54,7 @@ export const Container = styled.div`
     justify-content: center;
   }
 
-  .order {
+  .btns {
     display: flex;
     align-items: center;
     gap: 0.625rem;
@@ -105,7 +105,7 @@ export const Container = styled.div`
       }
     }
 
-    .order {
+    .btns {
       grid-area: buttons;
       margin-bottom: 41.25rem;
 

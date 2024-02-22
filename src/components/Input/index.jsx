@@ -7,7 +7,10 @@ export function Input({ setSearch, hasIcon, width, background, widthStyle, isDis
 
   return (
     <Container style={{ width: widthStyle, background: bgStyle }}>
-      {hasIcon && <PiMagnifyingGlass className="search-icon" />}
+      {
+        hasIcon && 
+        <PiMagnifyingGlass className="search-icon" />
+      }
       <input
         disabled={isDisabled}
         onChange={(e) => setSearch(e.target.value)}

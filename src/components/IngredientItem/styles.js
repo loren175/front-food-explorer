@@ -4,9 +4,13 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   background-color: ${({ theme, isNew }) =>
-    !isNew ? ` ${theme.COLORS.LIGHT_600}` : "transparent"};
+    !isNew ? ` ${theme.COLORS.LIGHT_600}` 
+    : "transparent"};
+
   border: ${({ theme, isNew }) =>
-    !isNew ? "none" : `1px dashed ${theme.COLORS.LIGHT_500}`};
+    !isNew ? "none" 
+    : `1px dashed ${theme.COLORS.LIGHT_500}`};
+    
   color: ${({ theme }) => theme.COLORS.LIGHT_100};
   border-radius: 0.625rem;
   padding-right: 0.5rem;

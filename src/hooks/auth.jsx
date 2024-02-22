@@ -7,21 +7,26 @@ function AuthProvider({ children }) {
   const [data, setData] = useState({})
 
   async function signIn({ email, password }) {
+
     try {
       const response = await api.post(
         "/sessions",
         { email, password },
         { withCredentials: true }
       )
+
       const { user } = response.data
 
       if (email.includes("admin")) {
         user.is_admin = 1
       }
 
+      // este "if" acima é apenas para ambientes de teste
+
       localStorage.setItem("@foodexplorer:user", JSON.stringify(user))
 
       setData({ user })
+      
     } catch (error) {
       if (error.response) {
         alert(error.response.data.message)

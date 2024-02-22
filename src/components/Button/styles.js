@@ -1,8 +1,6 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const Container = styled.button`
-  background-color: ${({ $bgcolor }) => $bgcolor};
-  color: ${({ theme }) => theme.COLORS.LIGHT_100};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,6 +11,8 @@ export const Container = styled.button`
   font-size: 0.875rem;
   font-family: "Poppins";
   font-weight: 400;
+  background-color: ${({ $bgcolor }) => $bgcolor};
+  color: ${({ theme }) => theme.COLORS.LIGHT_100};
 
   .paper-icon {
     width: 1.18rem;

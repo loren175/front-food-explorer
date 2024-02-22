@@ -48,6 +48,7 @@ export function SignUp() {
 
   return (
     <Container>
+
       <Brand>
         <svg
           width="39"
@@ -61,10 +62,15 @@ export function SignUp() {
             fill="#065E7C"
           />
         </svg>
+
         <h1>food explorer</h1>
+
       </Brand>
+
       <Form>
+
         <h2>Crie sua Conta</h2>
+
         <Section text="Seu nome">
           <Input
             widthStyle="316px"
@@ -73,6 +79,7 @@ export function SignUp() {
             onChange={(e) => setName(e.target.value)}
           />
         </Section>
+
         <Section text="Email">
           <Input
             widthStyle="316px"
@@ -81,6 +88,7 @@ export function SignUp() {
             onChange={(e) => setEmail(e.target.value)}
           />
         </Section>
+
         <Section text="Senha">
           <Input
             widthStyle="316px"
@@ -100,6 +108,7 @@ export function SignUp() {
           text="Já tenho uma conta"
         />
       </Form>
+      
     </Container>
   )
 }

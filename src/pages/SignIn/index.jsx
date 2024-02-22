@@ -39,6 +39,7 @@ export function SignIn() {
 
   return (
     <Container>
+
       <Brand>
         <svg
           width="39"
@@ -52,10 +53,14 @@ export function SignIn() {
             fill="#065E7C"
           />
         </svg>
+        
         <h1>food explorer</h1>
       </Brand>
+
       <Form onKeyDown={handleKeyDown}>
+
         <h2>Faça login</h2>
+
         <Section text="Email">
           <Input
             widthStyle="316px"
@@ -64,6 +69,7 @@ export function SignIn() {
             onChange={(e) => setEmail(e.target.value)}
           />
         </Section>
+
         <Section text="Senha">
           <Input
             widthStyle="316px"
@@ -83,6 +89,7 @@ export function SignIn() {
           text="Criar uma conta"
         />
       </Form>
+      
     </Container>
   )
 }

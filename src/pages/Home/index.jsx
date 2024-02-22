@@ -26,9 +26,7 @@ export function Home({ isAdmin }) {
   const navigate = useNavigate()
 
   const [dishes, setDishes] = useState({ meals: [], desserts: [], drinks: [] })
-
   const [search, setSearch] = useState("")
-
   const [menuIsOpen, setMenuIsOpen] = useState(false)
 
   function handleDishClick(id) {
@@ -38,10 +36,9 @@ export function Home({ isAdmin }) {
   useEffect(() => {
     async function fetchDishes() {
       const response = await api.get(`/dish?search=${search}`)
+
       const meals = response.data.filter((dish) => dish.category === "meal")
-      const desserts = response.data.filter(
-        (dish) => dish.category === "dessert"
-      )
+      const desserts = response.data.filter((dish) => dish.category === "dessert")
       const drinks = response.data.filter((dish) => dish.category === "drink")
 
       setDishes({ meals, desserts, drinks })
@@ -58,23 +55,29 @@ export function Home({ isAdmin }) {
         setSearch={setSearch}
         onCloseMenu={() => setMenuIsOpen(false)}
       />
+
       <Navbar
         onOpenMenu={() => setMenuIsOpen(true)}
         isAdmin={isAdmin}
         setSearch={setSearch}
       />
+
       <main>
         <div>
+
           <header className="banner">
+
             <img
               className="banner-img"
               src={isDesktop ? homeImgDesk : homeImg}
               alt="Macarons coloridos caindo com frutas silvestres e folhas."
             />
+
             <div className="banner-text">
               <h2>Sabores inigualáveis</h2>
               <p>Sinta o cuidado do preparo com ingredientes selecionados.</p>
             </div>
+
           </header>
         </div>
 
@@ -86,7 +89,8 @@ export function Home({ isAdmin }) {
             loop="true"
             grab-cursor="true"
           >
-            {dishes &&
+            {
+              dishes &&
               dishes.meals.map((dish) => (
                 <swiper-slide key={String(dish.id)}>
                   <Card
@@ -95,9 +99,11 @@ export function Home({ isAdmin }) {
                     data={dish}
                   />
                 </swiper-slide>
-              ))}
+              ))
+              }
           </swiper-container>
         </Section>
+        
         <Section text="Sobremesas">
           <swiper-container
             space-between={isDesktop ? "27" : "16"}
@@ -106,7 +112,8 @@ export function Home({ isAdmin }) {
             loop="true"
             grab-cursor="true"
           >
-            {dishes &&
+            {
+              dishes &&
               dishes.desserts.map((dish) => (
                 <swiper-slide key={String(dish.id)}>
                   <Card
@@ -115,9 +122,11 @@ export function Home({ isAdmin }) {
                     data={dish}
                   />
                 </swiper-slide>
-              ))}
+              ))
+              }
           </swiper-container>
         </Section>
+
         <Section text="Bebidas">
           <swiper-container
             space-between={isDesktop ? "27" : "16"}
@@ -126,7 +135,8 @@ export function Home({ isAdmin }) {
             loop="true"
             grab-cursor="true"
           >
-            {dishes &&
+            {
+              dishes &&
               dishes.drinks.map((dish) => (
                 <swiper-slide key={String(dish.id)}>
                   <Card
@@ -135,11 +145,15 @@ export function Home({ isAdmin }) {
                     data={dish}
                   />
                 </swiper-slide>
-              ))}
+              )) 
+              }
           </swiper-container>
         </Section>
+
       </main>
+
       <Footer />
+      
     </Container>
   )
 }

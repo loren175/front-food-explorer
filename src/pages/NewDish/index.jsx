@@ -43,6 +43,7 @@ export function NewDish({ isAdmin }) {
 
   function handleImageUpload(e) {
     const file = e.target.files[0]
+
     setImage(file)
     setFileName(file.name)
   }
@@ -89,8 +90,10 @@ export function NewDish({ isAdmin }) {
 
     try {
       await api.post("/dish", formData)
+
       alert("Prato cadastrado com sucesso!")
       navigate(-1)
+
     } catch (error) {
       if (error.response) {
         alert(error.response.data.message)
@@ -117,7 +120,6 @@ export function NewDish({ isAdmin }) {
     }
   }
 
-
   return (
     <Container>
       <SideMenu
@@ -126,33 +128,44 @@ export function NewDish({ isAdmin }) {
         isAdmin={isAdmin}
         onCloseMenu={() => setMenuIsOpen(false)}
       />
+
       <Navbar
         isDisabled={true}
         onOpenMenu={() => setMenuIsOpen(true)}
         isAdmin={isAdmin}
       />
+
       <main>
         <Form onKeyDown={handleKeyDown}>
+
           <div className="back-btn">
             <ButtonText onClick={() => handleBackClick()} text="< voltar" />
           </div>
 
-          {isDesktop ? <h2>Adicionar prato</h2> : <h2>Novo Prato</h2>}
+          {
+            isDesktop ? 
+            <h2>Adicionar prato</h2> : 
+            <h2>Novo Prato</h2>
+          }
 
           <Section text="Imagem do prato">
             <ImgUpload className="image">
+              
               <label htmlFor="image">
                 <PiUploadSimpleLight size={24} />
                 <span>{fileName || "Selecione imagem"}</span>
               </label>
+
               <input
                 onChange={handleImageUpload}
                 className="upload"
                 type="file"
                 id="image"
               />
+
             </ImgUpload>
           </Section>
+
           <Section text="Nome">
             <Input
               placeholder="Ex.: Salada Ceasar"
@@ -161,8 +174,12 @@ export function NewDish({ isAdmin }) {
               onChange={(e) => setName(e.target.value)}
             />
           </Section>
+
           <Section text="Categoria">
-            <label className="category-label" htmlFor="category">
+            <label 
+              className="category-label" 
+              htmlFor="category"
+              >
               <select
                 id="category"
                 value={category}
@@ -173,19 +190,22 @@ export function NewDish({ isAdmin }) {
                 <option value="dessert">Sobremesa</option>
                 <option value="drink">Bebidas</option>
               </select>
+
               <RiArrowDownSLine className="svgCategory" size={22} />
             </label>
           </Section>
 
           <Section text="Ingredientes">
             <div className="tags">
-              {ingredients.map((ingredient, index) => (
+              {
+                ingredients.map((ingredient, index) => (
                 <IngredientItem
                   key={String(index)}
                   value={ingredient}
                   onClick={() => handleRemoveIngredient(ingredient)}
                 />
-              ))}
+              ))
+              }
               <IngredientItem
                 isNew
                 placeholder="Adicionar"
@@ -193,6 +213,7 @@ export function NewDish({ isAdmin }) {
                 onChange={(e) => setNewIngredients(e.target.value)}
                 onClick={handleAddIngredient}
               />
+              
             </div>
           </Section>
 
@@ -206,6 +227,7 @@ export function NewDish({ isAdmin }) {
               onChange={(e) => setPrice(e.target.value)}
             />
           </Section>
+
           <div className="text-section">
             <Section text="Descrição">
               <textarea
@@ -229,9 +251,12 @@ export function NewDish({ isAdmin }) {
               onClick={handleNewDish}
             />
           </div>
+
         </Form>
       </main>
+
       <Footer />
+      
     </Container>
   )
 }

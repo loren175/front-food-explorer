@@ -17,13 +17,13 @@ export const Container = styled.div`
   }
 
   .banner {
-    position: relative;
     background: linear-gradient(
       340deg,
       ${({ theme }) => theme.COLORS.GRADIENT_100} 0%,
       ${({ theme }) => theme.COLORS.GRADIENT_200} 100%
-    );
-    color: ${({ theme }) => theme.COLORS.LIGHT_300};
+      );
+      color: ${({ theme }) => theme.COLORS.LIGHT_300};
+    position: relative;
     width: 17.75rem;
     height: 6.225rem;
     margin-top: 2.68rem;

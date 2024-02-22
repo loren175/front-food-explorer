@@ -46,6 +46,7 @@ export function EditDish({ isAdmin }) {
 
   function handleImageChange(e) {
     const file = e.target.files[0]
+
     setImage(file)
     setUpdatedImage(file)
     setFileName(file.name)
@@ -115,6 +116,7 @@ export function EditDish({ isAdmin }) {
 
       alert("Prato atualizado com sucesso!")
       navigate(-1)
+
     } catch (error) {
       if (error.response) {
         alert(error.response.data.message)
@@ -152,8 +154,10 @@ export function EditDish({ isAdmin }) {
       try {
         const response = await api.get(`/dish/${params.id}`)
         setDish(response.data)
+
       } catch (error) {
         console.error(error)
+
       }
     }
     fetchDish()
@@ -183,37 +187,48 @@ export function EditDish({ isAdmin }) {
         isAdmin={isAdmin}
         onCloseMenu={() => setMenuIsOpen(false)}
       />
+
       <Navbar
         isDisabled={true}
         onOpenMenu={() => setMenuIsOpen(true)}
         isAdmin={isAdmin}
       />
+
       <main>
         <Form onKeyDown={handleKeyDown}>
+
           <div className="back-btn">
             <ButtonText onClick={() => handleBackClick()} text="< voltar" />
           </div>
+
           <h2>Editar Prato</h2>
+
           <Section text="Imagem do prato">
             <ImgUpload className="image">
+              
               <label htmlFor="image">
                 <PiUploadSimpleLight size={24} />
-                {isDesktop ? (
-                  <span>{fileName || "Selecione imagem"}</span>
-                ) : (
-                  <span>
-                    {fileName || "Selecione uma imagem para altera-la."}
-                  </span>
-                )}
+                {
+                  isDesktop ? (
+                    <span>{fileName || "Selecione imagem"}</span>
+                  ) : (
+                    <span>
+                      {fileName || "Selecione uma imagem para altera-la."}
+                    </span>
+                  )
+                }
               </label>
+
               <input
                 className="upload"
                 onChange={handleImageChange}
                 type="file"
                 id="image"
               />
+
             </ImgUpload>
           </Section>
+
           <Section text="Nome">
             <Input
               placeholder="Salada Ceasar"
@@ -222,8 +237,10 @@ export function EditDish({ isAdmin }) {
               background="dark_800"
             />
           </Section>
+
           <Section text="Categoria">
             <label className="category-label" htmlFor="category">
+
               <select
                 id="category"
                 value={category}
@@ -233,18 +250,22 @@ export function EditDish({ isAdmin }) {
                 <option value="">Refeição2</option>
                 <option value="">Refeição3</option>
               </select>
+
               <RiArrowDownSLine className="svgCategory" size={22} />
             </label>
           </Section>
+
           <Section text="Ingredientes">
             <div className="tags">
-              {ingredients.map((ingredient, index) => (
-                <IngredientItem
-                  key={String(index)}
-                  value={ingredient}
-                  onClick={() => handleRemoveIngredient(ingredient)}
-                />
-              ))}
+              {
+                ingredients.map((ingredient, index) => (
+                  <IngredientItem
+                    key={String(index)}
+                    value={ingredient}
+                    onClick={() => handleRemoveIngredient(ingredient)}
+                  />
+              ))
+              }
               <IngredientItem
                 isNew
                 placeholder="Adicionar"
@@ -253,6 +274,7 @@ export function EditDish({ isAdmin }) {
                 onClick={handleAddIngredient}
               />
             </div>
+            
           </Section>
 
           <label className="grid-void-space"></label>
@@ -266,6 +288,7 @@ export function EditDish({ isAdmin }) {
               onChange={(e) => setPrice(e.target.value)}
             />
           </Section>
+
           <div className="text-section">
             <Section text="Descrição">
               <textarea
@@ -296,9 +319,12 @@ export function EditDish({ isAdmin }) {
               onClick={handleEditDish}
             />
           </div>
+
         </Form>
       </main>
+
       <Footer />
+      
     </Container>
   )
 }

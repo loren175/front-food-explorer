@@ -6,13 +6,13 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: ${({ theme }) => theme.COLORS.DARK_200};
   width: 12.5rem;
   height: 17.25rem;
   gap: 0.625rem;
   position: relative;
   border-radius: 0.25rem;
   border: 2px solid ${({ theme }) => theme.COLORS.DARK_300};
+  background-color: ${({ theme }) => theme.COLORS.DARK_200};
 
   .card-icons {
     position: absolute;

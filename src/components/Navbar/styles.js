@@ -6,9 +6,9 @@ export const Container = styled.header`
   height: 7.125rem;
   display: flex;
   align-items: center;
-  background-color: ${({ theme }) => theme.COLORS.DARK_700};
   padding: 3.93rem 1.06rem 2.125rem 1.06rem;
   justify-content: space-between;
+  background-color: ${({ theme }) => theme.COLORS.DARK_700};
   transition: all 0.3s;
 
   svg:hover {
@@ -25,15 +25,15 @@ export const Container = styled.header`
     position: absolute;
     top: 50px;
     right: 10px;
-    background-color: ${({ theme }) => theme.COLORS.RED_200};
-    color: ${({ theme }) => theme.COLORS.LIGHT_100};
-    font-size: 0.75rem;
+    justify-content: center;
+    align-items: center;
     border-radius: 50%;
     width: 1.125rem;
     height: 1.125rem;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: ${({ theme }) => theme.COLORS.RED_200};
+    color: ${({ theme }) => theme.COLORS.LIGHT_100};
+    font-size: 0.75rem;
     font-family: "Poppins";
   }
 
@@ -68,8 +68,8 @@ export const Brand = styled.div`
 
   .admin-p {
     color: ${({ theme }) => theme.COLORS.BLUE_200};
-    font-size: 0.73rem;
     padding-right: 2.5rem;
+    font-size: 0.73rem;
     font-family: "Roboto";
     font-weight: 300;
   }
@@ -79,8 +79,8 @@ export const Brand = styled.div`
 
     p {
       left: 105px;
-      position: absolute;
       top: 20px;
+      position: absolute;
     }
   }
 `

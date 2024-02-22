@@ -26,6 +26,7 @@ export const Brand = styled.div`
   display: flex;
   align-items: center;
   gap: 0.687rem;
+  
   @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
     padding-bottom: 6.25rem;
     width: 100%;

@@ -38,7 +38,10 @@ export function Navbar({ setSearch, isAdmin, onOpenMenu, isDisabled }) {
 
   return (
     <Container>
-      {!isDesktop && <PiList size={24} onClick={onOpenMenu} />}
+      {
+        !isDesktop && 
+        <PiList size={24} onClick={onOpenMenu} />
+      }
 
       <Brand onClick={handleHomeClick}>
         <svg
@@ -53,25 +56,30 @@ export function Navbar({ setSearch, isAdmin, onOpenMenu, isDisabled }) {
             fill="#065E7C"
           />
         </svg>
+
         <h1>food explorer</h1>
-        {isAdmin ? (
-          <p className="admin-p">admin</p>
-        ) : (
-          <p className="admin-p"></p>
-        )}
+
+        {
+        isAdmin ? 
+          <p className="admin-p">admin</p> : 
+          <></>
+        }
       </Brand>
 
-      {!isAdmin ? (
+      {
+      !isAdmin ? (
         isDesktop && (
           <>
             <label className="flex-space-between" htmlFor=""></label>
           </>
         )
-      ) : (
+        ) : (
         <label className="flex-space-between" htmlFor=""></label>
-      )}
+        )
+      }
 
-      {isDesktop && (
+      {
+      isDesktop && (
         <Input
           widthStyle="480px"
           hasIcon={true}
@@ -79,8 +87,11 @@ export function Navbar({ setSearch, isAdmin, onOpenMenu, isDisabled }) {
           isDisabled={isDisabled}
           setSearch={setSearch}
         />
-      )}
-      {isDesktop &&
+      )
+      }
+
+      {
+      isDesktop &&
         (isAdmin ? (
           <Button
             onClick={() => handleNewDishClick()}
@@ -94,9 +105,11 @@ export function Navbar({ setSearch, isAdmin, onOpenMenu, isDisabled }) {
             bgColor={theme.COLORS.RED_200}
             text="Pedidos (0)"
           />
-        ))}
+        ))
+        }
 
-      {!isDesktop ? (
+      {
+      !isDesktop ? (
         !isAdmin && (
           <>
             <PiNewspaperClipping className="order-svg" size={24} />
@@ -105,7 +118,9 @@ export function Navbar({ setSearch, isAdmin, onOpenMenu, isDisabled }) {
         )
       ) : (
         <PiSignOut size={24} onClick={handleSignOutClick} />
-      )}
+      )
+      }
+
     </Container>
   )
 }

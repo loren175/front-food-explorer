@@ -11,7 +11,10 @@ export function AuthRoutes() {
       <Route path="/" element={<SignIn />} />
       <Route path="/register" element={<SignUp />} />
 
-      {!user && <Route path="*" element={<Navigate to="/" />} />}
+      {
+        !user && 
+        <Route path="*" element={<Navigate to="/" />} />
+      }
     </Routes>
   )
 }

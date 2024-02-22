@@ -52,35 +52,51 @@ export function Dish({ isAdmin }) {
         isAdmin={isAdmin}
         onCloseMenu={() => setMenuIsOpen(false)}
       />
+
       <Navbar
         isDisabled={true}
         onOpenMenu={() => setMenuIsOpen(true)}
         isAdmin={isAdmin}
       />
-      {data && (
-        <main>
-          <div className="back-btn">
-            <ButtonText onClick={() => handleBackClick()} text="< voltar" />
-          </div>
-          <img
-            src={`${api.defaults.baseURL}/files/${data.image}`}
-            alt={data.name}
-          />
+
+      {
+        data && (
+          <main>
+            <div className="back-btn">
+              <ButtonText 
+                onClick={() => handleBackClick()} 
+                text="< voltar" 
+            />
+            </div>
+            <img
+              src={`${api.defaults.baseURL}/files/${data.image}`}
+              alt={data.name}
+            />
 
           <Section text={data.name}>
+            
             <p>{data.description}</p>
-            {data.ingredients && (
+
+            {
+            data.ingredients && (
               <div className="tag-area">
-                {data.ingredients.map((ingredient) => (
-                  <Tag key={String(ingredient.id)} text={ingredient.name} />
-                ))}
+                {
+                  data.ingredients.map((ingredient) => (
+                  <Tag 
+                    key={String(ingredient.id)} 
+                    text={ingredient.name} />
+                ))
+                }
               </div>
-            )}
+            )
+            }
           </Section>
 
-          <div className="order">
-            {!isAdmin && <Amount />}
-            {isAdmin ? (
+          <div className="btns">
+            {
+              !isAdmin && <Amount />}
+            {
+              isAdmin ? (
               <Button
                 bgColor={theme.COLORS.RED_100}
                 hasIcon={false}
@@ -110,7 +126,9 @@ export function Dish({ isAdmin }) {
             )}
           </div>
         </main>
-      )}
+      )
+      }
+      
       <Footer />
     </Container>
   )

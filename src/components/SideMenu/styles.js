@@ -11,10 +11,10 @@ export const Container = styled.aside`
     display: flex;
     align-items: center;
     gap: 0.43rem;
-    background-color: ${({ theme }) => theme.COLORS.DARK_700};
     width: 100%;
     height: 7.125rem;
     padding: 1.56rem;
+    background-color: ${({ theme }) => theme.COLORS.DARK_700};
   }
   .close-btn {
     width: 1.43rem;
@@ -46,9 +46,9 @@ export const Container = styled.aside`
     font-weight: 300;
     font-size: 1.125rem;
     font-family: "Poppins";
-    color: ${({ theme }) => theme.COLORS.LIGHT_300};
     display: block;
     margin: 0.625rem 0 0.625rem 0;
+    color: ${({ theme }) => theme.COLORS.LIGHT_300};
   }
 
   @media (max-width: ${DEVICE_BREAKPOINTS.LG}) {

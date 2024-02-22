@@ -13,7 +13,6 @@ import { api } from "../../services/api"
 import { useMediaQuery } from "react-responsive"
 import { useNavigate } from "react-router-dom"
 
-
 export function Card({ handleDishClick, data, isAdmin, ...rest }) {
   const isDesktop = useMediaQuery({ minWidth: DEVICE_BREAKPOINTS.LG })
 
@@ -26,23 +25,25 @@ export function Card({ handleDishClick, data, isAdmin, ...rest }) {
   return (
     <Container {...rest}>
       {isAdmin ? (
-        <PiPencilSimple
-          onClick={handleEditClick}
-          className="card-icons"
-        />
+        <PiPencilSimple onClick={handleEditClick} className="card-icons" />
       ) : (
         <PiHeart className="card-icons" />
       )}
+
       <img
         onClick={() => handleDishClick(data.id)}
         src={`${api.defaults.baseURL}/files/${data.image}`}
-        alt=""
+        alt={data.name}
       />
-      <h4 onClick={() => handleDishClick(data.id)}>{data.name} &gt; </h4>
+
+      <h4 onClick={() => handleDishClick(data.id)}>{data.name} &gt;</h4>
+
       {isDesktop && <p className="description">{data.description}</p>}
+
       <h5>
         R$ {data.price.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}
       </h5>
+
       {!isAdmin && (
         <Add>
           <Amount />

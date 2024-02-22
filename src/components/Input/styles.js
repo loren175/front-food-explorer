@@ -5,27 +5,24 @@ export const Container = styled.div`
   color: ${({ theme }) => theme.COLORS.LIGHT_500};
   border-radius: 0.25rem;
   margin-bottom: 0.5rem;
+  width: 100%;
   display: flex;
   align-items: center;
-  width: 100%;
+  
   > input {
-    background: transparent;
+    border: none;
     width: 100%;
     height: 3rem;
+    padding: 0.312rem;
     font-size: 0.875rem;
     font-weight: 300;
-    border: none;
     color: ${({ theme }) => theme.COLORS.LIGHT_500};
-    padding: 0.312rem;
+    background: transparent;
   }
 
   .search-icon {
     margin: 0.5rem;
     font-size: 1.56rem;
     color: ${({ theme }) => theme.COLORS.LIGHT_400};
-  }
-
-  &:disabled {
-    
   }
 `

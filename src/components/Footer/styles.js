@@ -7,8 +7,8 @@ export const Container = styled.footer`
   color: ${({ theme }) => theme.COLORS.LIGHT_200};
   display: flex;
   align-items: center;
-  gap: 0.625rem;
   justify-content: center;
+  gap: 0.625rem;
   height: 4.81rem;
   width: 100%;
 

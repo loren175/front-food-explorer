@@ -34,33 +34,33 @@ export const Form = styled.form`
     margin: 0.625rem 0px;
     font-family: "Poppins";
     font-weight: 300;
-    color: ${({ theme }) => theme.COLORS.LIGHT_300};
     font-size: 2rem;
+    color: ${({ theme }) => theme.COLORS.LIGHT_300};
   }
 
   textarea {
     background-color: ${({ theme }) => theme.COLORS.DARK_800};
     color: ${({ theme }) => theme.COLORS.LIGHT_500};
+    font-family: "Roboto";
     border: none;
     border-radius: 0.25rem;
-    font-family: "Roboto";
     font-size: 0.875rem;
     width: 100%;
     height: 172px;
-    outline: none;
     padding: 0.625rem 3.125rem 0.625rem 0.625rem;
+    outline: none;
   }
 
   .tags {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    align-items: center;
     gap: 6px;
     padding: 6px;
-    align-items: center;
-    background-color: ${({ theme }) => theme.COLORS.DARK_800};
     border-radius: 0.25rem;
     height: 100%;
+    background-color: ${({ theme }) => theme.COLORS.DARK_800};
   }
 
   .category-label {
@@ -70,7 +70,6 @@ export const Form = styled.form`
     border-radius: 0.25rem;
     display: flex;
     align-items: center;
-
     position: relative;
   }
 
@@ -78,13 +77,13 @@ export const Form = styled.form`
     border: none;
     background: none;
     outline: none;
-    color: ${({ theme }) => theme.COLORS.LIGHT_400};
     appearance: none;
     width: 100%;
     padding: 1rem;
     font-family: "Roboto";
     font-size: 0.875rem;
     font-weight: 400;
+    color: ${({ theme }) => theme.COLORS.LIGHT_400};
   }
 
   option {
@@ -93,9 +92,9 @@ export const Form = styled.form`
 
   .svgCategory {
     position: absolute;
-    cursor: default;
     right: 0;
     margin-right: 0.625rem;
+    cursor: default;
   }
 
   .btn {
@@ -110,12 +109,12 @@ export const Form = styled.form`
   }
 
   @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
-    height: 100vh;
     display: grid;
     grid-template-columns: repeat(3, 18.75rem);
     grid-template-rows: 3.125rem 4.375rem 4.375rem auto 12.5rem;
     margin: 1.25rem;
     gap: 2.625rem;
+    height: 100vh;
 
     .back-btn {
       > button {
@@ -161,13 +160,13 @@ export const ImgUpload = styled.div`
     display: flex;
     align-items: center;
     gap: 0.4rem;
-    font-size: 0.875rem;
     padding: 0.625rem 1.25rem;
-    cursor: pointer;
-    background-color: ${({ theme }) => theme.COLORS.DARK_800};
     border-radius: 0.25rem;
     width: 100%;
     height: 3rem;
+    font-size: 0.875rem;
+    background-color: ${({ theme }) => theme.COLORS.DARK_800};
+    cursor: pointer;
   }
 
   .upload {

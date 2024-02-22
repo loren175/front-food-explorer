@@ -16,9 +16,12 @@ export function Footer () {
             fill="#4D585E"
           />
         </svg>
+
         <h1>food explorer</h1>
       </Brand>
+
       <span>© 2023 - Todos os direitos reservados.</span>
+      
     </Container>
   )
 }
